@@ -22,7 +22,7 @@ if (!function_exists('str_choice')) {
      * @param array  $choice
      * @param string $additional
      *
-     * @return  string
+     * @return string
      */
     function str_choice(int $num, array $choice = [], string $additional = '')
     {

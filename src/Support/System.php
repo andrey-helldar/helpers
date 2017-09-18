@@ -35,7 +35,7 @@ class System
      */
     public static function isWindows()
     {
-        return (mb_strtolower(substr(PHP_OS, 0, 3), 'UTF-8') === 'win');
+        return mb_strtolower(substr(PHP_OS, 0, 3), 'UTF-8') === 'win';
     }
 
     /**
@@ -45,6 +45,6 @@ class System
      */
     public static function isLinux()
     {
-        return (mb_strtolower(PHP_OS, 'UTF-8') === 'linux');
+        return mb_strtolower(PHP_OS, 'UTF-8') === 'linux';
     }
 }
