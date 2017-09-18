@@ -52,6 +52,7 @@ Now, use our Helpers :)
 
 * [Arrays](#arrays)
 * [Digits](#digits)
+* [Files](#files)
 * [Images](#images)
 * [Strings](#strings)
 * [Systems](#systems)
@@ -85,6 +86,16 @@ Calculating the factorial of a number:
 
     echo factorial(int $n = 0) : int
     echo \Helldar\Helpers\Support\Digits::factorial(int $n = 0) : int
+
+[ [to top](#) | [to menu](#menu) ]
+
+
+### Files
+
+Checks whether a file or directory exists on URL:
+
+    return url_file_exists($path) : bool
+    return \Helldar\Helpers\Support\Files::urlFileExists($path) : bool
 
 [ [to top](#) | [to menu](#menu) ]
 
