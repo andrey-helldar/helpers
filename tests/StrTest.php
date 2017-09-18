@@ -36,7 +36,7 @@ class StrTest extends AbstractTestCase
         $this->assertEquals('foo"bar', Str::de('foo&quot;bar'));
         $this->assertEquals('foo&bar', Str::de('foo&amp;bar'));
         $this->assertEquals("foo'bar", Str::de('foo&#039;bar'));
-        $this->assertEquals("foo'bar", Str::de("foo&#039;bar"));
+        $this->assertEquals("foo'bar", Str::de('foo&#039;bar'));
         $this->assertEquals('foo\\\'bar', Str::de('foo\&#039;bar'));
         $this->assertEquals('Foo->bar with space', Str::de('Foo-&gt;bar with space'));
         $this->assertEquals('A#symbol^and%a$few@special!chars~`', Str::de('A#symbol^and%a$few@special!chars~`'));
