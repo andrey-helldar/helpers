@@ -19,7 +19,7 @@
         "source": "https://github.com/andrey-helldar/helpers"
     },
     "require": {
-        "php": ">=7.0.0",
+        "php": ">=7.1.0",
         "illuminate/support": "5.5.*"
     },
     "require-dev": {
