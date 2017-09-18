@@ -19,13 +19,13 @@
         "source": "https://github.com/andrey-helldar/helpers"
     },
     "require": {
-        "php": ">=7.0",
+        "php": ">=7.1",
         "illuminate/support": "5.5.*"
     },
     "require-dev": {
         "graham-campbell/testbench": "^4.0",
         "mockery/mockery": "dev-master",
-        "phpunit/phpunit": "^6.0"
+        "phpunit/phpunit": "^6.3"
     },
     "autoload": {
         "psr-4": {
