@@ -15,6 +15,8 @@ Functions that simplify the development process.
 
 <p align="center">
 <a href="https://github.com/andrey-helldar/helpers"><img src="https://img.shields.io/scrutinizer/g/andrey-helldar/helpers.svg?style=flat-square" alt="Quality Score" /></a>
+<a href='https://www.versioneye.com/user/projects/59bff8eb0fb24f003d2ef836'><img src='https://www.versioneye.com/user/projects/59bff8eb0fb24f003d2ef836/badge.svg?style=flat-square' alt="Dependency Status" /></a>
+<a href="https://styleci.io/repos/103963472"><img src="https://styleci.io/repos/103963472/shield" alt="StyleCI" /></a>
 <a href="https://php-eye.com/package/andrey-helldar/helpers"><img src="https://php-eye.com/badge/andrey-helldar/helpers/tested.svg?style=flat" alt="PHP-Eye" /></a>
 </p>
 
