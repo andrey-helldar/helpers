@@ -121,16 +121,16 @@ The str_choice function translates the given language line with inflection:
 
     Example:
         echo str_choice(1, ['пользователь', 'пользователя', 'пользователей']);
-        // returned "1 пользователь"
+        // returned "пользователь"
 
         echo str_choice(3, ['пользователь', 'пользователя', 'пользователей']);
-        // returned "3 пользователя"
+        // returned "пользователя"
 
         echo str_choice(20, ['пользователь', 'пользователя', 'пользователей']);
-        // returned "20 пользователей"
+        // returned "пользователей"
 
         echo str_choice(20, ['пользователь', 'пользователя', 'пользователей'], 'здесь');
-        // returned "20 пользователей здесь"
+        // returned "пользователей здесь"
 
 
 Escape HTML special characters in a string:
