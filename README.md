@@ -46,12 +46,56 @@ Now, use our Helpers :)
 
 ## Documentation
 
+### Menu
+
+* [Arrays](#arrays)
+* [Digits](#digits)
+* [Images](#images)
+* [Strings](#strings)
+* [Systems](#systems)
+
+
+### Arrays
+
+Returns the number of characters of the longest element in the array:
+
+    echo array_item_value_max_length(array $array = []) : int
+    echo \Helldar\Helpers\Support\Arr::arrayItemValueMaxLength(array $array = []) : int
+
+
+Get the first element of an array. Useful for method chaining:
+
+    return array_first(array $array = []) : mixed
+    return \Helldar\Helpers\Support\Arr::arrayFirst(array $array = []) : mixed
+
+
+Get the last element from an array:
+
+    return array_last(array $array = []) : mixed
+    return \Helldar\Helpers\Support\Arr::arrayLast(array $array = []) : mixed
+
+[ [to top](#) | [to menu](#menu) ]
+
+
 ### Digits
 
 Calculating the factorial of a number:
 
     echo factorial(int $n = 0) : int
     echo \Helldar\Helpers\Support\Digits::factorial(int $n = 0) : int
+
+[ [to top](#) | [to menu](#menu) ]
+
+
+### Images
+
+Check the existence of the file and return the default value if it is missing:
+
+    echo image_or_default(string $filename, $default = null) : string
+    echo \Helldar\Helpers\Support\Images::imageOrDefault(string $filename, $default = null) : string
+
+[ [to top](#) | [to menu](#menu) ]
+
 
 ### Strings
 
@@ -85,33 +129,7 @@ Convert special HTML entities back to characters:
     echo de($value) : string
     echo \Helldar\Helpers\Support\Str::de($value) : string
 
-
-### Images
-
-Check the existence of the file and return the default value if it is missing:
-
-    echo image_or_default(string $filename, $default = null) : string
-    echo \Helldar\Helpers\Support\Images::imageOrDefault(string $filename, $default = null) : string
-
-
-### Arrays
-
-Returns the number of characters of the longest element in the array:
-
-    echo array_item_value_max_length(array $array = []) : int
-    echo \Helldar\Helpers\Support\Arr::arrayItemValueMaxLength(array $array = []) : int
-
-
-Get the first element of an array. Useful for method chaining:
-
-    return array_first(array $array = []) : mixed
-    return \Helldar\Helpers\Support\Arr::arrayFirst(array $array = []) : mixed
-
-
-Get the last element from an array:
-
-    return array_last(array $array = []) : mixed
-    return \Helldar\Helpers\Support\Arr::arrayLast(array $array = []) : mixed
+[ [to top](#) | [to menu](#menu) ]
 
 
 ### Systems
@@ -126,6 +144,8 @@ Determine whether the current environment is Linux based:
 
     return is_linux() : bool
     return \Helldar\Helpers\Support\System::isLinux() : bool
+
+[ [to top](#) | [to menu](#menu) ]
 
 
 ## Support Package
