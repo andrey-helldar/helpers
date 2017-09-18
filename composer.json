@@ -1,0 +1,52 @@
+{
+    "name": "andrey-helldar/helpers",
+    "description": "Functions that simplify the development process",
+    "type": "library",
+    "license": "MIT",
+    "homepage": "http://ai-rus.com",
+    "keywords": [
+        "helldar",
+        "helpers"
+    ],
+    "authors": [
+        {
+            "name": "Andrey Helldar",
+            "email": "helldar@ai-rus.com"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/andrey-helldar/helpers/issues",
+        "source": "https://github.com/andrey-helldar/helpers"
+    },
+    "require": {
+        "php": ">=7.0.0",
+        "illuminate/support": "5.5.*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.3",
+        "graham-campbell/testbench": "^4.0",
+        "mockery/mockery": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "Helldar\\Helpers\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Helldar\\Helpers\\LaravelServiceProvider"
+            ]
+        }
+    }
+}
