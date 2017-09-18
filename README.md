@@ -1,6 +1,6 @@
 ## Helpers for Laravel 5.5+
 
-A set of features that simplify development
+Functions that simplify the development process.
 
 ![Helpers for Laravel 5.5+](https://user-images.githubusercontent.com/10347617/30551794-67b9d35e-9ca4-11e7-8e86-1db1b456a2a5.jpg)
 
