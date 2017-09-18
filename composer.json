@@ -19,7 +19,7 @@
         "source": "https://github.com/andrey-helldar/helpers"
     },
     "require": {
-        "php": ">=7.1.0",
+        "php": ">=7.0",
         "illuminate/support": "5.5.*"
     },
     "require-dev": {
@@ -35,15 +35,18 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\": "tests/"
+            "Helldar\\Helpers\\Tests\\": "tests/"
         }
+    },
+    "config": {
+        "preferred-install": "dist"
     },
     "minimum-stability": "stable",
     "prefer-stable": true,
     "extra": {
         "laravel": {
             "providers": [
-                "Helldar\\Helpers\\LaravelServiceProvider"
+                "Helldar\\Helpers\\ServiceProvider"
             ]
         }
     }

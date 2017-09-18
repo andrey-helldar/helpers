@@ -26,7 +26,7 @@
 
 namespace Helldar\Helpers;
 
-class LaravelServiceProvider extends \Illuminate\Support\ServiceProvider
+class ServiceProvider extends \Illuminate\Support\ServiceProvider
 {
     /**
      * Indicates if loading of the provider is deferred.
