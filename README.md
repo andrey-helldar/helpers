@@ -43,7 +43,9 @@ If you don't use auto-discovery, add the ServiceProvider to the providers array 
 
     Helldar\Helpers\LaravelServiceProvider::class,
 
-Now, use our Helpers :)
+Now you can use helpers or access directly to interfaces.
+
+Enjoy!
 
 
 ## Documentation
