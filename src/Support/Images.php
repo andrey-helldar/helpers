@@ -38,6 +38,6 @@ class Images
      */
     public static function imageOrDefault(string $filename, $default = null)
     {
-        return (file_exists($filename) ? $filename : $default);
+        return file_exists($filename) ? $filename : $default;
     }
 }
