@@ -115,6 +115,23 @@ if (!function_exists('array_last')) {
     }
 }
 
+if (!function_exists('array_rename_keys')) {
+    /**
+     * Renaming array keys.
+     * As the first parameter, a callback function is passed, which determines the actions for processing the value.
+     * The output of the function must be a string with a name.
+     *
+     * @param       $callback
+     * @param array $array
+     *
+     * @return array
+     */
+    function array_rename_keys($callback, array $array = [])
+    {
+        return \Helldar\Helpers\Support\Arr::arrayRenameKeys($callback, $array);
+    }
+}
+
 if (!function_exists('is_windows')) {
     /**
      * Determine whether the current environment is Windows based.

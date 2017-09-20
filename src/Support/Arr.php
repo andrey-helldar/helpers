@@ -71,4 +71,27 @@ class Arr
     {
         return end($array);
     }
+
+    /**
+     * Renaming array keys.
+     * As the first parameter, a callback function is passed, which determines the actions for processing the value.
+     * The output of the function must be a string with a name.
+     *
+     * @param       $callback
+     * @param array $array
+     *
+     * @return array
+     */
+    public static function arrayRenameKeys($callback, array $array = [])
+    {
+        $result = [];
+
+        foreach ($array as $key => $value) {
+            $new_key = $callback($key);
+
+            $result[$new_key] = $value;
+        }
+
+        return $result;
+    }
 }
