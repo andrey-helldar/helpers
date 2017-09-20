@@ -46,6 +46,9 @@
     "minimum-stability": "stable",
     "prefer-stable": true,
     "extra": {
+    	"branch-alias": {
+    		"dev-master": "1.0-dev"
+    	},
         "laravel": {
             "providers": [
                 "Helldar\\Helpers\\ServiceProvider"
