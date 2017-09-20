@@ -97,13 +97,13 @@ class Arr
 
     /**
      * Get the size of the longest text element of the array.
-     * 
+     *
      * @param array $array
-     * 
+     *
      * @return int
      */
     public static function arraySizeOfMaxValue(array $array = [])
     {
-    	return mb_strlen(max($array), 'UTF-8');
+        return mb_strlen(max($array), 'UTF-8');
     }
 }
