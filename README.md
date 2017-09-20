@@ -87,6 +87,12 @@ The output of the function must be a string with a name.
     return array_rename_keys($callback, array $array = []) : array
     return \Helldar\Helpers\Support\Arr::arrayRenameKeys($callback, array $array = []) : array
 
+
+Get the size of the longest text element of the array:
+
+    return array_size_max_value(array $array = []) : int
+    return \Helldar\Helpers\Support\Arr::arraySizeOfMaxValue($array) : int
+
 [ [to top](#) | [to menu](#menu) ]
 
 

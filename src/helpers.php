@@ -115,6 +115,20 @@ if (!function_exists('array_last')) {
     }
 }
 
+if (!function_exists('array_size_max_value')) {
+    /**
+     * Get the size of the longest text element of the array.
+     *
+     * @param array $array
+     *
+     * @return int
+     */
+    function array_size_max_value(array $array = [])
+    {
+        return \Helldar\Helpers\Support\Arr::arraySizeOfMaxValue($array);
+    }
+}
+
 if (!function_exists('array_rename_keys')) {
     /**
      * Renaming array keys.
