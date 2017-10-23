@@ -183,3 +183,19 @@ if (!function_exists('url_file_exists')) {
         return \Helldar\Helpers\Support\Files::urlFileExists($path);
     }
 }
+
+if (!function_exists('mix_url')) {
+    /**
+     * Convert the relative path of a versioned Mix files to absolute.
+     *
+     * @param string $path
+     * @param string $manifestDirectory
+     *
+     * @return \Illuminate\Contracts\Routing\UrlGenerator|string
+     * @throws \Exception
+     */
+    function mix_url($path, $manifestDirectory = '')
+    {
+        return \Helldar\Helpers\Support\Http::mixUrl($path, $manifestDirectory);
+    }
+}

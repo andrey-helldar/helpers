@@ -55,6 +55,7 @@ Enjoy!
 * [Arrays](#arrays)
 * [Digits](#digits)
 * [Files](#files)
+* [Http](#http)
 * [Images](#images)
 * [Strings](#strings)
 * [Systems](#systems)
@@ -112,6 +113,16 @@ Checks whether a file or directory exists on URL:
 
     return url_file_exists($path) : bool
     return \Helldar\Helpers\Support\Files::urlFileExists($path) : bool
+
+[ [to top](#) | [to menu](#menu) ]
+
+
+### Http
+
+Convert the relative path of a versioned Mix files to absolute.
+
+    return mix_url($path) : string
+    return \Helldar\Helpers\Support\Http::mixUrl($path) : string
 
 [ [to top](#) | [to menu](#menu) ]
 
