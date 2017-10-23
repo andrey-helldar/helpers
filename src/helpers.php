@@ -191,8 +191,9 @@ if (!function_exists('mix_url')) {
      * @param string $path
      * @param string $manifestDirectory
      *
-     * @return \Illuminate\Contracts\Routing\UrlGenerator|string
      * @throws \Exception
+     *
+     * @return \Illuminate\Contracts\Routing\UrlGenerator|string
      */
     function mix_url($path, $manifestDirectory = '')
     {
