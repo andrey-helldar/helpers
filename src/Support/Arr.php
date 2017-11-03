@@ -41,7 +41,7 @@ class Arr
 
         foreach ($array as $item) {
             if (strlen($item) > $max) {
-                $max = strlen((string)$item);
+                $max = strlen((string) $item);
             }
         }
 
@@ -130,6 +130,7 @@ class Arr
             foreach ($values as $value) {
                 self::addUnique($array, $value);
             }
+
             return;
         }
 
