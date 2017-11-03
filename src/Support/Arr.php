@@ -41,7 +41,7 @@ class Arr
 
         foreach ($array as $item) {
             if (strlen($item) > $max) {
-                $max = strlen((string)$item);
+                $max = strlen((string) $item);
             }
         }
 
