@@ -41,7 +41,7 @@ class Arr
 
         foreach ($array as $item) {
             if (strlen($item) > $max) {
-                $max = strlen((string) $item);
+                $max = strlen((string)$item);
             }
         }
 
@@ -121,13 +121,20 @@ class Arr
     /**
      * Push one a unique element onto the end of array.
      *
-     * @param $array
-     * @param $value
+     * @param array       $array
+     * @param array|mixed $values
      */
-    public static function addUnique(&$array, $value)
+    public static function addUnique(&$array, $values)
     {
-        if (!in_array($value, $array)) {
-            array_push($array, $value);
+        if (gettype($values) === 'array' || gettype($values) === 'object') {
+            foreach ($values as $value) {
+                self::addUnique($array, $value);
+            }
+            return;
+        }
+
+        if (!in_array($values, $array)) {
+            array_push($array, $values);
         }
     }
 }

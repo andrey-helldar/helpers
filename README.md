@@ -90,7 +90,8 @@ Push one or more elements onto the end of array:
 Push one a unique element onto the end of array:
 
     array_add_unique(array &$array, $value)
-    \Helldar\Helpers\Support\Arr::addUnique(&$array, $value)
+    \Helldar\Helpers\Support\Arr::addUnique(&$array, $value = 'value')
+    \Helldar\Helpers\Support\Arr::addUnique(&$array, $value = ['value1', 'value2', ...])
 
 
 Renaming array keys.
