@@ -55,7 +55,7 @@ if (!function_exists('array_item_value_max_length')) {
      */
     function array_item_value_max_length(array $array = [])
     {
-        return \Helldar\Helpers\Support\Arr::arrayItemValueMaxLength($array);
+        return \Helldar\Helpers\Support\Arr::itemValueMaxLength($array);
     }
 }
 
@@ -97,7 +97,7 @@ if (!function_exists('array_first')) {
      */
     function array_first(array $array = [])
     {
-        return \Helldar\Helpers\Support\Arr::arrayFirst($array);
+        return \Helldar\Helpers\Support\Arr::first($array);
     }
 }
 
@@ -111,7 +111,7 @@ if (!function_exists('array_last')) {
      */
     function array_last(array $array = [])
     {
-        return \Helldar\Helpers\Support\Arr::arrayLast($array);
+        return \Helldar\Helpers\Support\Arr::last($array);
     }
 }
 
@@ -125,7 +125,7 @@ if (!function_exists('array_size_max_value')) {
      */
     function array_size_max_value(array $array = [])
     {
-        return \Helldar\Helpers\Support\Arr::arraySizeOfMaxValue($array);
+        return \Helldar\Helpers\Support\Arr::sizeOfMaxValue($array);
     }
 }
 
@@ -142,7 +142,7 @@ if (!function_exists('array_rename_keys')) {
      */
     function array_rename_keys($callback, array $array = [])
     {
-        return \Helldar\Helpers\Support\Arr::arrayRenameKeys($callback, $array);
+        return \Helldar\Helpers\Support\Arr::renameKeys($callback, $array);
     }
 }
 
@@ -180,7 +180,7 @@ if (!function_exists('url_file_exists')) {
      */
     function url_file_exists($path)
     {
-        return \Helldar\Helpers\Support\Files::urlFileExists($path);
+        return \Helldar\Helpers\Support\Files::urlExists($path);
     }
 }
 

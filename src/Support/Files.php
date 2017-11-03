@@ -11,7 +11,7 @@ class Files
      *
      * @return bool
      */
-    public static function urlFileExists($path)
+    public static function urlExists($path)
     {
         $headers = @get_headers($path);
 

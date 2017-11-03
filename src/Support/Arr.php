@@ -35,7 +35,7 @@ class Arr
      *
      * @return int
      */
-    public static function arrayItemValueMaxLength(array $array = [])
+    public static function itemValueMaxLength(array $array = [])
     {
         $max = 0;
 
@@ -55,7 +55,7 @@ class Arr
      *
      * @return mixed
      */
-    public static function arrayFirst(array $array = [])
+    public static function first(array $array = [])
     {
         return reset($array);
     }
@@ -67,7 +67,7 @@ class Arr
      *
      * @return mixed
      */
-    public static function arrayLast(array $array = [])
+    public static function last(array $array = [])
     {
         return end($array);
     }
@@ -82,7 +82,7 @@ class Arr
      *
      * @return array
      */
-    public static function arrayRenameKeys($callback, array $array = [])
+    public static function renameKeys($callback, array $array = [])
     {
         $result = [];
 
@@ -102,7 +102,7 @@ class Arr
      *
      * @return int
      */
-    public static function arraySizeOfMaxValue(array $array = [])
+    public static function sizeOfMaxValue(array $array = [])
     {
         return mb_strlen(max($array), 'UTF-8');
     }

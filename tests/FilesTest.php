@@ -12,7 +12,7 @@ class FilesTest extends AbstractTestCase
         $file1 = 'https://raw.githubusercontent.com/andrey-helldar/helpers/master/README.md';
         $file2 = 'https://raw.githubusercontent.com/andrey-helldar/helpers/master/unknown.md';
 
-        $this->assertEquals(true, Files::urlFileExists($file1));
-        $this->assertEquals(false, Files::urlFileExists($file2));
+        $this->assertEquals(true, Files::urlExists($file1));
+        $this->assertEquals(false, Files::urlExists($file2));
     }
 }
