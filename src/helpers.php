@@ -146,6 +146,32 @@ if (!function_exists('array_rename_keys')) {
     }
 }
 
+if (!function_exists('array_add')) {
+    /**
+     * Push one or more elements onto the end of array.
+     *
+     * @param $array
+     * @param $value
+     */
+    function array_add(&$array, $value)
+    {
+        \Helldar\Helpers\Support\Arr::add($array, $value);
+    }
+}
+
+if (!function_exists('array_add_unique')) {
+    /**
+     * Push one a unique element onto the end of array.
+     *
+     * @param $array
+     * @param $value
+     */
+    function array_add_unique(&$array, $value)
+    {
+        \Helldar\Helpers\Support\Arr::addUnique($array, $value);
+    }
+}
+
 if (!function_exists('is_windows')) {
     /**
      * Determine whether the current environment is Windows based.

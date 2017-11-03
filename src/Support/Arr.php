@@ -41,7 +41,7 @@ class Arr
 
         foreach ($array as $item) {
             if (strlen($item) > $max) {
-                $max = strlen((string) $item);
+                $max = strlen((string)$item);
             }
         }
 
@@ -105,5 +105,29 @@ class Arr
     public static function sizeOfMaxValue(array $array = [])
     {
         return mb_strlen(max($array), 'UTF-8');
+    }
+
+    /**
+     * Push one or more elements onto the end of array.
+     *
+     * @param $array
+     * @param $value
+     */
+    public static function add(&$array, $value)
+    {
+        array_push($array, $value);
+    }
+
+    /**
+     * Push one a unique element onto the end of array.
+     *
+     * @param $array
+     * @param $value
+     */
+    public static function addUnique(&$array, $value)
+    {
+        if (!in_array($value, $array)) {
+            array_push($array, $value);
+        }
     }
 }

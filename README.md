@@ -81,6 +81,18 @@ Get the last element from an array:
     return \Helldar\Helpers\Support\Arr::arrayLast(array $array = []) : mixed
 
 
+Push one or more elements onto the end of array:
+
+    array_add(array &$array, $value)
+    \Helldar\Helpers\Support\Arr::add(&$array, $value)
+
+
+Push one a unique element onto the end of array:
+
+    array_add_unique(array &$array, $value)
+    \Helldar\Helpers\Support\Arr::addUnique(&$array, $value)
+
+
 Renaming array keys.
 As the first parameter, a callback function is passed, which determines the actions for processing the value.
 The output of the function must be a string with a name.
