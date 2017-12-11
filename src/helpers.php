@@ -226,3 +226,17 @@ if (!function_exists('mix_url')) {
         return \Helldar\Helpers\Support\Http::mixUrl($path, $manifestDirectory);
     }
 }
+
+if (!function_exists('base_url')) {
+    /**
+     * Get the domain name from the URL.
+     *
+     * @param $url
+     *
+     * @return string
+     */
+    function base_url($url)
+    {
+        return \Helldar\Helpers\Support\Http::baseUrl($url);
+    }
+}

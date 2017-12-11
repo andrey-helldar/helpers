@@ -18,4 +18,16 @@ class Http
     {
         return url(mix($path));
     }
+
+    /**
+     * Get the domain name from the URL.
+     *
+     * @param $url
+     *
+     * @return string
+     */
+    public static function baseUrl($url)
+    {
+        return parse_url($url, PHP_URL_HOST);
+    }
 }

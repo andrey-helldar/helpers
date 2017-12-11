@@ -137,6 +137,12 @@ Convert the relative path of a versioned Mix files to absolute.
     return mix_url($path) : string
     return \Helldar\Helpers\Support\Http::mixUrl($path) : string
 
+
+Get the domain name from the URL.
+
+    return base_url($url) : string
+    return \Helldar\Helpers\Support\Http::baseUrl($url) : string
+
 [ [to top](#) | [to menu](#menu) ]
 
 
