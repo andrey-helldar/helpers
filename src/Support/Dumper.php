@@ -23,7 +23,7 @@ class Dumper
 
         $sql = $query->toSql();
 
-        $bindings = array_map(function($binding) {
+        $bindings = array_map(function ($binding) {
             return is_int($binding) || is_float($binding) ? $binding : "'{$binding}'";
         }, $query->getBindings());
 
