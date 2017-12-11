@@ -14,6 +14,22 @@ if (!function_exists('factorial')) {
     }
 }
 
+if (!function_exists('ddSql')) {
+    /**
+     * Dump the passed variables and end the script.
+     *
+     * @param      $query
+     * @param bool $is_short
+     * @param bool $is_return
+     *
+     * @return array|string
+     */
+    function ddSql($query, bool $is_short = false, bool $is_return = false)
+    {
+        return \Helldar\Helpers\Support\Dumper::ddSql($query, $is_short, $is_return);
+    }
+}
+
 if (!function_exists('str_choice')) {
     /**
      * The str_choice function translates the given language line with inflection:

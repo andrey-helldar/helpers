@@ -54,6 +54,7 @@ Enjoy!
 
 * [Arrays](#arrays)
 * [Digits](#digits)
+* [Dumper](#dumper)
 * [Files](#files)
 * [Http](#http)
 * [Images](#images)
@@ -140,6 +141,16 @@ Calculating the factorial of a number:
 
     echo factorial(int $n = 0) : int
     echo \Helldar\Helpers\Support\Digits::factorial(int $n = 0) : int
+
+[ [to top](#) | [to menu](#menu) ]
+
+
+### Dumper
+
+Dump the passed variables and end the script.
+
+    return ddSql($query, bool $is_short = false, bool $is_return = false) : array|string|void
+    return \Helldar\Helpers\Support\Dumper::ddSql($query, $is_short, $is_return) : array|string|void
 
 [ [to top](#) | [to menu](#menu) ]
 
