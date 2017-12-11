@@ -172,6 +172,36 @@ if (!function_exists('array_add_unique')) {
     }
 }
 
+if (!function_exists('array_sort_by_keys_array')) {
+    /**
+     * Sort an associative array in the order specified by an array of keys.
+     *
+     * Example:
+     *
+     *  $arr = ['q' => 1, 'r' => 2, 's' => 5, 'w' => 123];
+     *
+     *  array_sort_by_keys_array($arr, ['q', 'w', 'e']);
+     *
+     * print_r($arr);
+     *
+     * /*
+     *   Array
+     *   (
+     *     [q] => 1
+     *     [w] => 123
+     *     [r] => 2
+     *     [s] => 5
+     *   )
+     *
+     * @param array $array
+     * @param array $sorter
+     */
+    function array_sort_by_keys_array(array &$array, array $sorter)
+    {
+        \Helldar\Helpers\Support\Arr::sortByKeysArray($array, $sorter);
+    }
+}
+
 if (!function_exists('is_windows')) {
     /**
      * Determine whether the current environment is Windows based.

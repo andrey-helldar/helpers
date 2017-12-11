@@ -107,6 +107,30 @@ Get the size of the longest text element of the array:
     return array_size_max_value(array $array = []) : int
     return \Helldar\Helpers\Support\Arr::arraySizeOfMaxValue($array) : int
 
+
+Sort an associative array in the order specified by an array of keys.
+
+    array_sort_by_keys_array($array, $sorter) : void
+    \Helldar\Helpers\Support\Arr::sortByKeysArray($array, $sorter) : void
+
+    Example:
+
+        $arr = ['q' => 1, 'r' => 2, 's' => 5, 'w' => 123];
+
+        array_sort_by_keys_array($arr, ['q', 'w', 'e']);
+
+        print_r($arr);
+
+        /*
+        Array
+        (
+            [q] => 1
+            [w] => 123
+            [r] => 2
+            [s] => 5
+        )
+
+
 [ [to top](#) | [to menu](#menu) ]
 
 

@@ -138,4 +138,16 @@ class Arr
             array_push($array, $values);
         }
     }
+
+    /**
+     * Sort an associative array in the order specified by an array of keys.
+     *
+     * @param array $array
+     * @param array $sorter
+     */
+    public static function sortByKeysArray(array &$array, array $sorter)
+    {
+        $sorter = array_intersect($sorter, array_keys($array));
+        $array = array_merge(array_flip($sorter), $array);
+    }
 }

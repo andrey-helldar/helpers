@@ -37,4 +37,15 @@ class ArrTest extends AbstractTestCase
         $this->assertEquals([123123, 4332], Arr::last($arr1));
         $this->assertEquals('54y', Arr::last($arr2));
     }
+
+    public function sortByKeysArray()
+    {
+        $arr = ['q' => 1, 'r' => 2, 's' => 5, 'w' => 123];
+
+        array_sort_by_keys_array($arr, ['q', 'w', 'e']);
+
+        $this->assertEquals($arr, [
+            'q' => 1, 'w' => 123, 'r' => 2, 's' => 5,
+        ]);
+    }
 }
