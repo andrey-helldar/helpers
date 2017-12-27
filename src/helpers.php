@@ -103,6 +103,20 @@ if (!function_exists('de')) {
     }
 }
 
+if (!function_exists('str_replace_spaces')) {
+    /**
+     * Replacing multiple spaces with a single space.
+     *
+     * @param $input
+     *
+     * @return null|string|string[]
+     */
+    function str_replace_spaces($input)
+    {
+        return \Helldar\Helpers\Support\Str::replaceSpaces($input);
+    }
+}
+
 if (!function_exists('array_first')) {
     /**
      * Get the first element of an array. Useful for method chaining.

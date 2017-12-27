@@ -222,6 +222,12 @@ Convert special HTML entities back to characters:
     echo de($value) : string
     echo \Helldar\Helpers\Support\Str::de($value) : string
 
+
+Replacing multiple spaces with a single space.
+
+    echo str_replace_spaces($value) : string
+    echo \Helldar\Helpers\Support\Str::replaceSpaces($value) : string
+
 [ [to top](#) | [to menu](#menu) ]
 
 

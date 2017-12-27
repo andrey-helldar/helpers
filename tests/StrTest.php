@@ -41,4 +41,14 @@ class StrTest extends AbstractTestCase
         $this->assertEquals('Foo->bar with space', Str::de('Foo-&gt;bar with space'));
         $this->assertEquals('A#symbol^and%a$few@special!chars~`', Str::de('A#symbol^and%a$few@special!chars~`'));
     }
+
+    public function testReplaceSpaces()
+    {
+        $this->assertEquals('foo bar', Str::replaceSpaces('foo bar'));
+        $this->assertEquals('foo bar', Str::replaceSpaces('foo  bar'));
+        $this->assertEquals('foo bar', Str::replaceSpaces('foo    bar'));
+        $this->assertEquals('foo bar baz', Str::replaceSpaces('foo bar  baz'));
+        $this->assertEquals('foo bar baz', Str::replaceSpaces('foo  bar     baz'));
+        $this->assertEquals('foo bar baz', Str::replaceSpaces('foo    bar baz'));
+    }
 }

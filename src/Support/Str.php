@@ -78,4 +78,16 @@ class Str
     {
         return htmlspecialchars_decode($value, ENT_QUOTES);
     }
+
+    /**
+     * Replacing multiple spaces with a single space.
+     *
+     * @param $input
+     *
+     * @return null|string|string[]
+     */
+    public static function replaceSpaces($input)
+    {
+        return preg_replace('!\s+!', ' ', $input);
+    }
 }
