@@ -148,7 +148,7 @@ Calculating the factorial of a number:
 
 Dump the passed variables and end the script.
 
-    return ddSql($query, bool $is_short = false, bool $is_return = false) : array|string|void
+    return dd_sql($query, bool $is_short = false, bool $is_return = false) : array|string|void
     return \Helldar\Helpers\Support\Dumper::ddSql($query, $is_short, $is_return) : array|string|void
 
 [ [to top](#) | [to menu](#menu) ]

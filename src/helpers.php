@@ -14,7 +14,7 @@ if (!function_exists('factorial')) {
     }
 }
 
-if (!function_exists('ddSql')) {
+if (!function_exists('dd_sql')) {
     /**
      * Dump the passed variables and end the script.
      *
@@ -24,7 +24,7 @@ if (!function_exists('ddSql')) {
      *
      * @return array|string
      */
-    function ddSql($query, bool $is_short = false, bool $is_return = false)
+    function dd_sql($query, bool $is_short = false, bool $is_return = false)
     {
         return \Helldar\Helpers\Support\Dumper::ddSql($query, $is_short, $is_return);
     }
