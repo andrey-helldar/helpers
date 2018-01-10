@@ -141,6 +141,32 @@ Calculating the factorial of a number:
     echo factorial(int $n = 0) : int
     echo \Helldar\Helpers\Support\Digits::factorial(int $n = 0) : int
 
+
+Converts a number into a short version:
+
+    echo short_number($n = 0, $precision = 1) : int|string
+    echo \Helldar\Helpers\Support\Digits::shortNumber($n = 0, $precision = 1) : int|string
+
+    Example:
+
+        short_number(576);
+        // returns: 576
+
+        short_number(1000);
+        // returns: 1K
+
+        short_number(1440);
+        // returns: 1.4K
+
+        short_number(3000000);
+        // returns: 3M
+
+        short_number(3000000000);
+        // returns: 3B
+
+        short_number(3000000000000);
+        // returns: 3T+
+
 [ [to top](#) | [to menu](#menu) ]
 
 
