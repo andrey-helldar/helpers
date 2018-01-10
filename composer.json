@@ -33,7 +33,14 @@
             "Helldar\\Helpers\\": "src/"
         },
         "files": [
-            "src/helpers.php"
+            "src/Helpers/arrays.php",
+            "src/Helpers/digits.php",
+            "src/Helpers/dumper.php",
+            "src/Helpers/files.php",
+            "src/Helpers/http.php",
+            "src/Helpers/images.php",
+            "src/Helpers/strings.php",
+            "src/Helpers/systems.php"
         ]
     },
     "autoload-dev": {
