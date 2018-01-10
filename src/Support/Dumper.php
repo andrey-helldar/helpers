@@ -13,6 +13,8 @@ class Dumper
      * @param bool $is_short
      * @param bool $is_return
      *
+     * @see https://gist.github.com/Ellrion/561fc48894a87b853917e0a5cec83181#file-helper-php Original Source
+     *
      * @return array|string
      */
     public static function ddSql($query, bool $is_short = false, bool $is_return = false)

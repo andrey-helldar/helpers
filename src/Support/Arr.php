@@ -120,6 +120,8 @@ class Arr
      *
      * @param array $array
      * @param array $sorter
+     *
+     * @see https://gist.github.com/Ellrion/a3145621f936aa9416f4c04987533d8d#file-helper-php Original Source
      */
     public static function sortByKeysArray(array &$array, array $sorter)
     {
