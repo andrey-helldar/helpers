@@ -43,20 +43,24 @@ class Digits
 
         if ($value < 1000000) {
             $value = self::numberFormat($value, 1000, $precision);
+
             return $value.'K';
         }
 
         if ($value < 1000000000) {
             $value = self::numberFormat($value, 1000000, $precision);
+
             return $value.'M';
         }
 
         if ($value < 1000000000000) {
             $value = self::numberFormat($value, 1000000000, $precision);
+
             return $value.'B';
         }
 
         $value = self::numberFormat($value, 1000000000000, $precision);
+
         return $value.'T+';
     }
 
