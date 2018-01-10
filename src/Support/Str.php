@@ -34,11 +34,11 @@ class Str
     /**
      * Escape HTML special characters in a string.
      *
-     * @param string $value
+     * @param null|string $value
      *
      * @return string
      */
-    public static function e(string $value)
+    public static function e($value)
     {
         return htmlspecialchars($value, ENT_QUOTES, 'UTF-8', false);
     }
@@ -46,11 +46,11 @@ class Str
     /**
      * Convert special HTML entities back to characters.
      *
-     * @param string $value
+     * @param null|string $value
      *
      * @return string
      */
-    public static function de(string $value)
+    public static function de($value)
     {
         return htmlspecialchars_decode($value, ENT_QUOTES);
     }

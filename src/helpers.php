@@ -93,7 +93,7 @@ if (!function_exists('de')) {
     /**
      * Convert special HTML entities back to characters.
      *
-     * @param $value
+     * @param null|string $value
      *
      * @return string
      */
