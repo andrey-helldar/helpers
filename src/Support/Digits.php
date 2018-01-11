@@ -37,28 +37,24 @@ class Digits
             throw new InvalidNumberException($value);
         }
 
-        $length = strlen((string)((int)$value));
+        $length = strlen((string) ((int) $value));
 
         if ($length < 4) {
             $length = 4;
-        }
-        elseif ($length < 7) {
+        } elseif ($length < 7) {
             $length = 7;
-        }
-        elseif ($length < 10) {
+        } elseif ($length < 10) {
             $length = 10;
-        }
-        elseif ($length < 13) {
+        } elseif ($length < 13) {
             $length = 13;
-        }
-        else {
+        } else {
             $length = 16;
         }
 
         $suffix = self::suffix($length);
-        $value  = self::numberFormat($value, $length, $precision);
+        $value = self::numberFormat($value, $length, $precision);
 
-        return $value . $suffix;
+        return $value.$suffix;
     }
 
     /**
@@ -72,7 +68,7 @@ class Digits
      */
     private static function numberFormat($value = 0, $length = 4, $precision = 1)
     {
-        $divider = (double)bcpow(10, ($length - 4), 2);
+        $divider = (double) bcpow(10, ($length - 4), 2);
 
         return round($value / $divider, $precision);
     }
