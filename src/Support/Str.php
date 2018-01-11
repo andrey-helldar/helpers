@@ -35,8 +35,7 @@ class Str
 
         if ($mod == 0 || ($mod >= 5 && $mod <= 9) || ($num % 100 >= 11 && $num % 100 <= 20)) {
             $result = $choice[2] ?? '';
-        }
-        elseif ($mod >= 2 && $mod <= 4) {
+        } elseif ($mod >= 2 && $mod <= 4) {
             $result = $choice[1] ?? '';
         }
 
