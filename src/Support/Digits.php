@@ -13,7 +13,7 @@ class Digits
      *
      * @return int
      */
-    public static function factorial(int $n = 0)
+    public static function factorial($n = 0)
     {
         if ((int) $n == 0) {
             return 1;
