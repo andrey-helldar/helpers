@@ -3,6 +3,7 @@
 namespace Helldar\Helpers\Support;
 
 use Helldar\Helpers\Exceptions\InvalidNumberException;
+use Helldar\Helpers\System\Settings;
 
 class Digits
 {
@@ -84,7 +85,7 @@ class Digits
      */
     private function suffix($length = 0)
     {
-        $suffix = config('ah_helpers.digits.short_number', []);
+        $suffix = (new Settings('settings'))->config('digits.short_number', []);
 
         if (array_key_exists((int) $length, $suffix)) {
             return $suffix[$length];
