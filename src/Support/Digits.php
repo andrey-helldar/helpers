@@ -82,14 +82,14 @@ class Digits
      */
     private static function suffix($length = 0)
     {
-        $siffix = config('ah_helpers.digits.short_number', []);
+        $suffix = config('ah_helpers.digits.short_number', []);
 
-        if (array_key_exists($length, $siffix)) {
-            return $siffix[$length];
+        if (array_key_exists($length, $suffix)) {
+            return $suffix[$length];
         }
 
-        ksort($siffix);
+        ksort($suffix);
 
-        return last($siffix);
+        return last($suffix);
     }
 }
