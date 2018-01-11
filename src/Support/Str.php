@@ -5,22 +5,38 @@ namespace Helldar\Helpers\Support;
 class Str
 {
     /**
+     * @var mixed
+     */
+    private $value;
+
+    /**
+     * Str constructor.
+     *
+     * @param null $value
+     */
+    public function __construct($value = null)
+    {
+        $this->value = $value;
+    }
+
+    /**
      * The str_choice function translates the given language line with inflection.s
      *
-     * @param int    $num
      * @param array  $choice
      * @param string $additional
      *
      * @return string
      */
-    public static function choice(int $num, array $choice = [], string $additional = '')
+    public function choice(array $choice = [], string $additional = '')
     {
         $result = $choice[0] ?? '';
+        $num = (int) $this->value;
         $mod = $num % 10;
 
         if ($mod == 0 || ($mod >= 5 && $mod <= 9) || ($num % 100 >= 11 && $num % 100 <= 20)) {
             $result = $choice[2] ?? '';
-        } elseif ($mod >= 2 && $mod <= 4) {
+        }
+        elseif ($mod >= 2 && $mod <= 4) {
             $result = $choice[1] ?? '';
         }
 
@@ -34,36 +50,30 @@ class Str
     /**
      * Escape HTML special characters in a string.
      *
-     * @param null|string $value
-     *
      * @return string
      */
-    public static function e($value)
+    public function e()
     {
-        return htmlspecialchars($value, ENT_QUOTES, 'UTF-8', false);
+        return htmlspecialchars($this->value, ENT_QUOTES, 'UTF-8', false);
     }
 
     /**
      * Convert special HTML entities back to characters.
      *
-     * @param null|string $value
-     *
      * @return string
      */
-    public static function de($value)
+    public function de()
     {
-        return htmlspecialchars_decode($value, ENT_QUOTES);
+        return htmlspecialchars_decode($this->value, ENT_QUOTES);
     }
 
     /**
      * Replacing multiple spaces with a single space.
      *
-     * @param $input
-     *
      * @return null|string|string[]
      */
-    public static function replaceSpaces($input)
+    public function replaceSpaces()
     {
-        return preg_replace('!\s+!', ' ', $input);
+        return preg_replace('!\s+!', ' ', $this->value);
     }
 }

@@ -5,29 +5,41 @@ namespace Helldar\Helpers\Support;
 class Http
 {
     /**
+     * @var
+     */
+    private $url;
+
+    /**
+     * Http constructor.
+     *
+     * @param $url
+     */
+    public function __construct($url)
+    {
+        $this->url = $url;
+    }
+
+    /**
      * Convert the relative path of a versioned Mix files to absolute.
      *
-     * @param string $path
      * @param string $manifestDirectory
      *
      * @throws \Exception
      *
      * @return \Illuminate\Contracts\Routing\UrlGenerator|string
      */
-    public static function mixUrl($path, $manifestDirectory = '')
+    public function mixUrl($manifestDirectory = '')
     {
-        return url(mix($path));
+        return url(mix($this->url, $manifestDirectory));
     }
 
     /**
      * Get the domain name from the URL.
      *
-     * @param $url
-     *
      * @return string
      */
-    public static function baseUrl($url)
+    public function baseUrl()
     {
-        return parse_url($url, PHP_URL_HOST);
+        return parse_url($this->url, PHP_URL_HOST);
     }
 }

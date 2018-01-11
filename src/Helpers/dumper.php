@@ -12,6 +12,7 @@ if (!function_exists('dd_sql')) {
      */
     function dd_sql($query, bool $is_short = false, bool $is_return = false)
     {
-        return \Helldar\Helpers\Support\Dumper::ddSql($query, $is_short, $is_return);
+        return (new \Helldar\Helpers\Support\Dumper($query))
+            ->ddSql($is_short, $is_return);
     }
 }

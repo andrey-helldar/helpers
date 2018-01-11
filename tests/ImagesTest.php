@@ -13,7 +13,7 @@ class ImagesTest extends AbstractTestCase
     {
         $no_image = '/no-image.jpg';
 
-        $this->assertEquals($no_image, Images::imageOrDefault('unknown.txt', $no_image));
-        $this->assertEquals(null, Images::imageOrDefault('unknown.txt'));
+        $this->assertEquals($no_image, (new Images('unknown.txt'))->imageOrDefault($no_image));
+        $this->assertEquals(null, (new Images('unknown.txt'))->imageOrDefault());
     }
 }

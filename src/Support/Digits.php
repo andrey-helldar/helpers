@@ -54,8 +54,8 @@ class Digits
         $length = strlen((string) ((int) $this->digit));
         $length = ceil($length / 3) * 3 + 1;
 
-        $suffix = self::suffix($length);
-        $value = self::numberFormat($length, $precision);
+        $suffix = $this->suffix($length);
+        $value = $this->numberFormat($length, $precision);
 
         return $value.$suffix;
     }

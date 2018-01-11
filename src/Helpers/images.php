@@ -11,6 +11,7 @@ if (!function_exists('image_or_default')) {
      */
     function image_or_default(string $filename, $default = null)
     {
-        return \Helldar\Helpers\Support\Images::imageOrDefault($filename, $default);
+        return (new \Helldar\Helpers\Support\Images($filename))
+            ->imageOrDefault($default);
     }
 }

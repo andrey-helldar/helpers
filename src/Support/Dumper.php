@@ -7,9 +7,23 @@ use Illuminate\Database\Eloquent\Builder;
 class Dumper
 {
     /**
+     * @var string
+     */
+    private $query;
+
+    /**
+     * Dumper constructor.
+     *
+     * @param $query
+     */
+    public function __construct($query)
+    {
+        $this->query = $query;
+    }
+
+    /**
      * Dump the passed variables and end the script.
      *
-     * @param      $query
      * @param bool $is_short
      * @param bool $is_return
      *
@@ -17,20 +31,20 @@ class Dumper
      *
      * @return array|string
      */
-    public static function ddSql($query, bool $is_short = false, bool $is_return = false)
+    public function ddSql(bool $is_short = false, bool $is_return = false)
     {
-        if ($query instanceof Builder) {
-            $query = $query->getQuery();
+        if ($this->query instanceof Builder) {
+            $this->query = $this->query->getQuery();
         }
 
-        $sql = $query->toSql();
+        $sql = $this->query->toSql();
 
-        $bindings = array_map(function ($binding) {
+        $bindings = array_map(function($binding) {
             return is_int($binding) || is_float($binding) ? $binding : "'{$binding}'";
-        }, $query->getBindings());
+        }, $this->query->getBindings());
 
         $raw = vsprintf(str_replace(['%', '?'], ['%%', '%s'], $sql), $bindings);
-        $bindings = $query->getRawBindings();
+        $bindings = $this->query->getRawBindings();
 
         if ($is_return) {
             return $is_short ? $raw : compact('sql', 'bindings', 'raw');

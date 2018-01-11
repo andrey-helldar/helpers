@@ -12,7 +12,8 @@ if (!function_exists('str_choice')) {
      */
     function str_choice(int $num, array $choice = [], string $additional = '')
     {
-        return \Helldar\Helpers\Support\Str::choice($num, $choice, $additional);
+        return (new \Helldar\Helpers\Support\Str($num))
+            ->choice($choice, $additional);
     }
 }
 
@@ -26,7 +27,8 @@ if (!function_exists('e')) {
      */
     function e($value)
     {
-        return \Helldar\Helpers\Support\Str::e($value);
+        return (new \Helldar\Helpers\Support\Str($value))
+            ->e();
     }
 }
 
@@ -40,7 +42,8 @@ if (!function_exists('de')) {
      */
     function de($value)
     {
-        return \Helldar\Helpers\Support\Str::de($value);
+        return (new \Helldar\Helpers\Support\Str($value))
+            ->de();
     }
 }
 
@@ -48,12 +51,13 @@ if (!function_exists('str_replace_spaces')) {
     /**
      * Replacing multiple spaces with a single space.
      *
-     * @param $input
+     * @param $value
      *
      * @return null|string|string[]
      */
-    function str_replace_spaces($input)
+    function str_replace_spaces($value)
     {
-        return \Helldar\Helpers\Support\Str::replaceSpaces($input);
+        return (new \Helldar\Helpers\Support\Str($value))
+            ->replaceSpaces();
     }
 }

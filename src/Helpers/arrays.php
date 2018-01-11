@@ -10,7 +10,8 @@ if (!function_exists('array_item_value_max_length')) {
      */
     function array_item_value_max_length(array $array = [])
     {
-        return \Helldar\Helpers\Support\Arr::itemValueMaxLength($array);
+        return (new \Helldar\Helpers\Support\Arr($array))
+            ->itemValueMaxLength();
     }
 }
 
@@ -24,7 +25,8 @@ if (!function_exists('array_first')) {
      */
     function array_first(array $array = [])
     {
-        return \Helldar\Helpers\Support\Arr::first($array);
+        return (new \Helldar\Helpers\Support\Arr($array))
+            ->first();
     }
 }
 
@@ -38,7 +40,8 @@ if (!function_exists('array_last')) {
      */
     function array_last(array $array = [])
     {
-        return \Helldar\Helpers\Support\Arr::last($array);
+        return (new \Helldar\Helpers\Support\Arr($array))
+            ->last();
     }
 }
 
@@ -52,7 +55,8 @@ if (!function_exists('array_size_max_value')) {
      */
     function array_size_max_value(array $array = [])
     {
-        return \Helldar\Helpers\Support\Arr::sizeOfMaxValue($array);
+        return (new \Helldar\Helpers\Support\Arr($array))
+            ->sizeOfMaxValue();
     }
 }
 
@@ -69,7 +73,8 @@ if (!function_exists('array_rename_keys')) {
      */
     function array_rename_keys($callback, array $array = [])
     {
-        return \Helldar\Helpers\Support\Arr::renameKeys($callback, $array);
+        return (new \Helldar\Helpers\Support\Arr($array))
+            ->renameKeys($callback);
     }
 }
 
@@ -82,7 +87,8 @@ if (!function_exists('array_add')) {
      */
     function array_add(&$array, $value)
     {
-        \Helldar\Helpers\Support\Arr::add($array, $value);
+        (new \Helldar\Helpers\Support\Arr())
+            ->add($array, $value);
     }
 }
 
@@ -95,7 +101,8 @@ if (!function_exists('array_add_unique')) {
      */
     function array_add_unique(&$array, $value)
     {
-        \Helldar\Helpers\Support\Arr::addUnique($array, $value);
+        (new \Helldar\Helpers\Support\Arr())
+            ->addUnique($array, $value);
     }
 }
 
@@ -125,6 +132,7 @@ if (!function_exists('array_sort_by_keys_array')) {
      */
     function array_sort_by_keys_array(array &$array, array $sorter)
     {
-        \Helldar\Helpers\Support\Arr::sortByKeysArray($array, $sorter);
+        (new \Helldar\Helpers\Support\Arr())
+            ->sortByKeysArray($array, $sorter);
     }
 }

@@ -5,15 +5,28 @@ namespace Helldar\Helpers\Support;
 class Files
 {
     /**
-     * Checks whether a file or directory exists on URL.
+     * @var string
+     */
+    private $path;
+
+    /**
+     * Files constructor.
      *
-     * @param string $path
+     * @param $path
+     */
+    public function __construct($path)
+    {
+        $this->path = $path;
+    }
+
+    /**
+     * Checks whether a file or directory exists on URL.
      *
      * @return bool
      */
-    public static function urlExists($path)
+    public function urlExists()
     {
-        $headers = @get_headers($path);
+        $headers = get_headers($this->path);
 
         return (bool) stripos(reset($headers), '200 OK');
     }

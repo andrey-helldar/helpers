@@ -8,7 +8,8 @@ if (!function_exists('is_windows')) {
      */
     function is_windows()
     {
-        return (new \Helldar\Helpers\Support\System())->isWindows();
+        return (new \Helldar\Helpers\Support\System())
+            ->isWindows();
     }
 }
 
@@ -20,6 +21,7 @@ if (!function_exists('is_linux')) {
      */
     function is_linux()
     {
-        return (new \Helldar\Helpers\Support\System())->isLinux();
+        return (new \Helldar\Helpers\Support\System())
+            ->isLinux();
     }
 }

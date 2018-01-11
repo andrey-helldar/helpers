@@ -66,32 +66,40 @@ Enjoy!
 Returns the number of characters of the longest element in the array:
 
     echo array_item_value_max_length(array $array = []) : int
-    echo \Helldar\Helpers\Support\Arr::arrayItemValueMaxLength(array $array = []) : int
+    echo (new \Helldar\Helpers\Support\Arr(array $array = []))
+            ->arrayItemValueMaxLength() : int
 
 
 Get the first element of an array. Useful for method chaining:
 
     return array_first(array $array = []) : mixed
-    return \Helldar\Helpers\Support\Arr::arrayFirst(array $array = []) : mixed
+    return (new \Helldar\Helpers\Support\Arr(array $array = []))
+            ->arrayFirst() : mixed
 
 
 Get the last element from an array:
 
     return array_last(array $array = []) : mixed
-    return \Helldar\Helpers\Support\Arr::arrayLast(array $array = []) : mixed
+    return (new \Helldar\Helpers\Support\Arr(array $array = []))
+            ->arrayLast() : mixed
 
 
 Push one or more elements onto the end of array:
 
     array_add(array &$array, $value)
-    \Helldar\Helpers\Support\Arr::add(&$array, $value)
+    (new \Helldar\Helpers\Support\Arr())
+            ->add(&$array, $value)
 
 
 Push one a unique element onto the end of array:
 
     array_add_unique(array &$array, $value)
-    \Helldar\Helpers\Support\Arr::addUnique(&$array, $value = 'value')
-    \Helldar\Helpers\Support\Arr::addUnique(&$array, $value = ['value1', 'value2', ...])
+    
+    (new \Helldar\Helpers\Support\Arr())
+            ->addUnique(&$array, $value = 'value')
+            
+    (new \Helldar\Helpers\Support\Arr())
+            ->addUnique(&$array, $value = ['value1', 'value2', ...])
 
 
 Renaming array keys.
@@ -99,19 +107,22 @@ As the first parameter, a callback function is passed, which determines the acti
 The output of the function must be a string with a name.
 
     return array_rename_keys($callback, array $array = []) : array
-    return \Helldar\Helpers\Support\Arr::arrayRenameKeys($callback, array $array = []) : array
+    return (new \Helldar\Helpers\Support\Arr(array $array = []))
+            ->arrayRenameKeys($callback) : array
 
 
 Get the size of the longest text element of the array:
 
     return array_size_max_value(array $array = []) : int
-    return \Helldar\Helpers\Support\Arr::arraySizeOfMaxValue($array) : int
+    return (new \Helldar\Helpers\Support\Arr((array $array = []))
+            ->arraySizeOfMaxValue() : int
 
 
 Sort an associative array in the order specified by an array of keys.
 
     array_sort_by_keys_array($array, $sorter) : void
-    \Helldar\Helpers\Support\Arr::sortByKeysArray($array, $sorter) : void
+    (new \Helldar\Helpers\Support\Arr())
+            ->sortByKeysArray($array, $sorter) : void
 
     Example:
 
@@ -139,13 +150,15 @@ Sort an associative array in the order specified by an array of keys.
 Calculating the factorial of a number:
 
     echo factorial(int $n = 0) : int
-    echo (new \Helldar\Helpers\Support\Digits())->factorial(int $n = 0) : int
+    echo (new \Helldar\Helpers\Support\Digits())
+            ->factorial(int $n = 0) : int
 
 
 Converts a number into a short version:
 
     echo short_number($n = 0, $precision = 1) : int|string
-    echo (new \Helldar\Helpers\Support\Digits($n = 0))->shortNumber($precision = 1) : int|string
+    echo (new \Helldar\Helpers\Support\Digits($n = 0))
+            ->shortNumber($precision = 1) : int|string
 
     Example:
 
@@ -175,7 +188,8 @@ Converts a number into a short version:
 Dump the passed variables and end the script.
 
     return dd_sql($query, bool $is_short = false, bool $is_return = false) : array|string|void
-    return \Helldar\Helpers\Support\Dumper::ddSql($query, $is_short, $is_return) : array|string|void
+    return (new \Helldar\Helpers\Support\Dumper($query))
+            ->ddSql($is_short, $is_return) : array|string|void
 
 [ [to top](#) | [to menu](#menu) ]
 
@@ -185,7 +199,8 @@ Dump the passed variables and end the script.
 Checks whether a file or directory exists on URL:
 
     return url_file_exists($path) : bool
-    return \Helldar\Helpers\Support\Files::urlFileExists($path) : bool
+    return (new \Helldar\Helpers\Support\Files($path))
+            ->urlFileExists() : bool
 
 [ [to top](#) | [to menu](#menu) ]
 
@@ -195,13 +210,15 @@ Checks whether a file or directory exists on URL:
 Convert the relative path of a versioned Mix files to absolute.
 
     return mix_url($path) : string
-    return \Helldar\Helpers\Support\Http::mixUrl($path) : string
+    return (new \Helldar\Helpers\Support\Http($path))
+            ->mixUrl() : string
 
 
 Get the domain name from the URL.
 
     return base_url($url) : string
-    return \Helldar\Helpers\Support\Http::baseUrl($url) : string
+    return (new \Helldar\Helpers\Support\Http($url))
+            ->baseUrl() : string
 
 [ [to top](#) | [to menu](#menu) ]
 
@@ -211,7 +228,8 @@ Get the domain name from the URL.
 Check the existence of the file and return the default value if it is missing:
 
     echo image_or_default(string $filename, $default = null) : string
-    echo \Helldar\Helpers\Support\Images::imageOrDefault(string $filename, $default = null) : string
+    echo (new \Helldar\Helpers\Support\Images($filename))
+            ->imageOrDefault($default = null) : string
 
 [ [to top](#) | [to menu](#menu) ]
 
@@ -221,7 +239,8 @@ Check the existence of the file and return the default value if it is missing:
 The str_choice function translates the given language line with inflection:
 
     echo str_choice(int $num, array $choice = [], string $additional = '') : string
-    echo \Helldar\Helpers\Support\Str::choice(int $num, array $choice = [], string $additional = '') : string
+    echo (new \Helldar\Helpers\Support\Str($num))
+            ->choice(array $choice = [], string $additional = '') : string
 
     Example:
         echo str_choice(1, ['пользователь', 'пользователя', 'пользователей']);
@@ -240,19 +259,22 @@ The str_choice function translates the given language line with inflection:
 Escape HTML special characters in a string:
 
     echo e($value) : string
-    echo \Helldar\Helpers\Support\Str::e($value) : string
+    echo (new \Helldar\Helpers\Support\Str($value))
+            ->e() : string
 
 
 Convert special HTML entities back to characters:
 
     echo de($value) : string
-    echo \Helldar\Helpers\Support\Str::de($value) : string
+    echo (new \Helldar\Helpers\Support\Str($value))
+            ->de() : string
 
 
 Replacing multiple spaces with a single space.
 
     echo str_replace_spaces($value) : string
-    echo \Helldar\Helpers\Support\Str::replaceSpaces($value) : string
+    echo (new \Helldar\Helpers\Support\Str($value))
+            ->replaceSpaces() : string
 
 [ [to top](#) | [to menu](#menu) ]
 
@@ -262,18 +284,20 @@ Replacing multiple spaces with a single space.
 Determine whether the current environment is Windows based:
 
     return is_windows() : bool
-    return (new \Helldar\Helpers\Support\System())->isWindows() : bool
+    return (new \Helldar\Helpers\Support\System())
+            ->isWindows() : bool
 
 
 Determine whether the current environment is Linux based:
 
     return is_linux() : bool
-    return (new \Helldar\Helpers\Support\System())->isLinux() : bool
+    return (new \Helldar\Helpers\Support\System())
+            ->isLinux() : bool
 
 [ [to top](#) | [to menu](#menu) ]
 
 
-## Support Package
+## Donate
 
 You can donate via [PayPal](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=94B8LCPAPJ5VG), [Yandex Money](https://money.yandex.ru/quickpay/shop-widget?account=410012608840929&quickpay=shop&payment-type-choice=on&mobile-payment-type-choice=on&writer=seller&targets=Andrey+Helldar%3A+Open+Source+Projects&targets-hint=&default-sum=&button-text=04&mail=on&successURL=), WebMoney (Z124862854284, R343524258966) and [Patreon](https://www.patreon.com/helldar)
 

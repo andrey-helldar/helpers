@@ -5,17 +5,30 @@ namespace Helldar\Helpers\Support;
 class Arr
 {
     /**
-     * Returns the number of characters of the longest element in the array.
+     * @var array
+     */
+    private $array = [];
+
+    /**
+     * Arr constructor.
      *
      * @param array $array
+     */
+    public function __construct(array $array = [])
+    {
+        $this->array = $array;
+    }
+
+    /**
+     * Returns the number of characters of the longest element in the array.
      *
      * @return int
      */
-    public static function itemValueMaxLength(array $array = [])
+    public function itemValueMaxLength()
     {
         $max = 0;
 
-        foreach ($array as $item) {
+        foreach ($this->array as $item) {
             if (strlen($item) > $max) {
                 $max = strlen((string) $item);
             }
@@ -27,25 +40,21 @@ class Arr
     /**
      * Get the first element of an array. Useful for method chaining.
      *
-     * @param array $array
-     *
      * @return mixed
      */
-    public static function first(array $array = [])
+    public function first()
     {
-        return reset($array);
+        return reset($this->array);
     }
 
     /**
      * Get the last element from an array.
      *
-     * @param array $array
-     *
      * @return mixed
      */
-    public static function last(array $array = [])
+    public function last()
     {
-        return end($array);
+        return end($this->array);
     }
 
     /**
@@ -53,16 +62,15 @@ class Arr
      * As the first parameter, a callback function is passed, which determines the actions for processing the value.
      * The output of the function must be a string with a name.
      *
-     * @param       $callback
-     * @param array $array
+     * @param $callback
      *
      * @return array
      */
-    public static function renameKeys($callback, array $array = [])
+    public function renameKeys($callback)
     {
         $result = [];
 
-        foreach ($array as $key => $value) {
+        foreach ($this->array as $key => $value) {
             $new_key = $callback($key);
 
             $result[$new_key] = $value;
@@ -74,13 +82,11 @@ class Arr
     /**
      * Get the size of the longest text element of the array.
      *
-     * @param array $array
-     *
      * @return int
      */
-    public static function sizeOfMaxValue(array $array = [])
+    public function sizeOfMaxValue()
     {
-        return mb_strlen(max($array), 'UTF-8');
+        return mb_strlen(max($this->array), 'UTF-8');
     }
 
     /**
@@ -89,7 +95,7 @@ class Arr
      * @param $array
      * @param $value
      */
-    public static function add(&$array, $value)
+    public function add(&$array, $value)
     {
         array_push($array, $value);
     }
@@ -100,11 +106,11 @@ class Arr
      * @param array       $array
      * @param array|mixed $values
      */
-    public static function addUnique(&$array, $values)
+    public function addUnique(&$array, $values)
     {
-        if (gettype($values) === 'array' || gettype($values) === 'object') {
+        if (is_array($values) || is_object($values)) {
             foreach ($values as $value) {
-                self::addUnique($array, $value);
+                $this->addUnique($array, $value);
             }
 
             return;
@@ -123,7 +129,7 @@ class Arr
      *
      * @see https://gist.github.com/Ellrion/a3145621f936aa9416f4c04987533d8d#file-helper-php Original Source
      */
-    public static function sortByKeysArray(array &$array, array $sorter)
+    public function sortByKeysArray(array &$array, array $sorter)
     {
         $sorter = array_intersect($sorter, array_keys($array));
         $array = array_merge(array_flip($sorter), $array);

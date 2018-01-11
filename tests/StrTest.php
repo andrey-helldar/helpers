@@ -11,44 +11,44 @@ class StrTest extends AbstractTestCase
 {
     public function testChoice()
     {
-        $this->assertEquals('user', Str::choice(1, ['user', 'users', 'users']));
-        $this->assertEquals('users', Str::choice(5, ['user', 'users', 'users']));
-        $this->assertEquals('users', Str::choice(20, ['user', 'users', 'users']));
+        $this->assertEquals('user', (new Str(1))->choice(['user', 'users', 'users']));
+        $this->assertEquals('users', (new Str(5))->choice(['user', 'users', 'users']));
+        $this->assertEquals('users', (new Str(20))->choice(['user', 'users', 'users']));
 
-        $this->assertEquals('user of this', Str::choice(1, ['user', 'users', 'users'], 'of this'));
-        $this->assertEquals('users of this', Str::choice(5, ['user', 'users', 'users'], 'of this'));
-        $this->assertEquals('users of this', Str::choice(20, ['user', 'users', 'users'], 'of this'));
+        $this->assertEquals('user of this', (new Str(1))->choice(['user', 'users', 'users'], 'of this'));
+        $this->assertEquals('users of this', (new Str(5))->choice(['user', 'users', 'users'], 'of this'));
+        $this->assertEquals('users of this', (new Str(20))->choice(['user', 'users', 'users'], 'of this'));
     }
 
     public function testE()
     {
-        $this->assertEquals('foo&quot;bar', Str::e('foo"bar'));
-        $this->assertEquals('foo&amp;bar', Str::e('foo&bar'));
-        $this->assertEquals('foo&#039;bar', Str::e('foo\'bar'));
-        $this->assertEquals('foo&#039;bar', Str::e("foo'bar"));
-        $this->assertEquals('foo\&#039;bar', Str::e('foo\\\'bar'));
-        $this->assertEquals('Foo-&gt;bar with space', Str::e('Foo->bar with space'));
-        $this->assertEquals('A#symbol^and%a$few@special!chars~`', Str::e('A#symbol^and%a$few@special!chars~`'));
+        $this->assertEquals('foo&quot;bar', (new Str('foo"bar'))->e());
+        $this->assertEquals('foo&amp;bar', (new Str('foo&bar'))->e());
+        $this->assertEquals('foo&#039;bar', (new Str('foo\'bar'))->e());
+        $this->assertEquals('foo&#039;bar', (new Str("foo'bar"))->e());
+        $this->assertEquals('foo\&#039;bar', (new Str('foo\\\'bar'))->e());
+        $this->assertEquals('Foo-&gt;bar with space', (new Str('Foo->bar with space'))->e());
+        $this->assertEquals('A#symbol^and%a$few@special!chars~`', (new Str('A#symbol^and%a$few@special!chars~`'))->e());
     }
 
     public function testDe()
     {
-        $this->assertEquals('foo"bar', Str::de('foo&quot;bar'));
-        $this->assertEquals('foo&bar', Str::de('foo&amp;bar'));
-        $this->assertEquals("foo'bar", Str::de('foo&#039;bar'));
-        $this->assertEquals("foo'bar", Str::de('foo&#039;bar'));
-        $this->assertEquals('foo\\\'bar', Str::de('foo\&#039;bar'));
-        $this->assertEquals('Foo->bar with space', Str::de('Foo-&gt;bar with space'));
-        $this->assertEquals('A#symbol^and%a$few@special!chars~`', Str::de('A#symbol^and%a$few@special!chars~`'));
+        $this->assertEquals('foo"bar', (new Str('foo&quot;bar'))->de());
+        $this->assertEquals('foo&bar', (new Str('foo&amp;bar'))->de());
+        $this->assertEquals("foo'bar", (new Str('foo&#039;bar'))->de());
+        $this->assertEquals("foo'bar", (new Str('foo&#039;bar'))->de());
+        $this->assertEquals('foo\\\'bar', (new Str('foo\&#039;bar'))->de());
+        $this->assertEquals('Foo->bar with space', (new Str('Foo-&gt;bar with space'))->de());
+        $this->assertEquals('A#symbol^and%a$few@special!chars~`', (new Str('A#symbol^and%a$few@special!chars~`'))->de());
     }
 
     public function testReplaceSpaces()
     {
-        $this->assertEquals('foo bar', Str::replaceSpaces('foo bar'));
-        $this->assertEquals('foo bar', Str::replaceSpaces('foo  bar'));
-        $this->assertEquals('foo bar', Str::replaceSpaces('foo    bar'));
-        $this->assertEquals('foo bar baz', Str::replaceSpaces('foo bar  baz'));
-        $this->assertEquals('foo bar baz', Str::replaceSpaces('foo  bar     baz'));
-        $this->assertEquals('foo bar baz', Str::replaceSpaces('foo    bar baz'));
+        $this->assertEquals('foo bar', (new Str('foo bar'))->replaceSpaces());
+        $this->assertEquals('foo bar', (new Str('foo  bar'))->replaceSpaces());
+        $this->assertEquals('foo bar', (new Str('foo    bar'))->replaceSpaces());
+        $this->assertEquals('foo bar baz', (new Str('foo bar  baz'))->replaceSpaces());
+        $this->assertEquals('foo bar baz', (new Str('foo  bar     baz'))->replaceSpaces());
+        $this->assertEquals('foo bar baz', (new Str('foo    bar baz'))->replaceSpaces());
     }
 }

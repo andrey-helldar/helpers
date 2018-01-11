@@ -10,6 +10,7 @@ if (!function_exists('url_file_exists')) {
      */
     function url_file_exists($path)
     {
-        return \Helldar\Helpers\Support\Files::urlExists($path);
+        return (new \Helldar\Helpers\Support\Files($path))
+            ->urlExists();
     }
 }

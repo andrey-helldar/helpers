@@ -5,6 +5,7 @@ declare(strict_types = 1);
 namespace Helldar\Helpers\Tests;
 
 use GrahamCampbell\TestBench\AbstractTestCase;
+use Helldar\Helpers\Support\Http;
 
 class HttpTest extends AbstractTestCase
 {
@@ -15,13 +16,13 @@ class HttpTest extends AbstractTestCase
 
     public function baseUrl()
     {
-        $this->assertEquals(base_url('http://localhost'), 'localhost');
-        $this->assertEquals(base_url('http://localhost/foo/bar'), 'localhost');
+        $this->assertEquals((new Http('http://localhost'))->baseUrl(), 'localhost');
+        $this->assertEquals((new Http('http://localhost/foo/bar'))->baseUrl(), 'localhost');
 
-        $this->assertEquals(base_url('https://mysite.dev'), 'mysite.dev');
-        $this->assertEquals(base_url('https://mysite.dev/foo/bar'), 'mysite.dev');
+        $this->assertEquals((new Http('https://mysite.dev'))->baseUrl(), 'mysite.dev');
+        $this->assertEquals((new Http('https://mysite.dev/foo/bar'))->baseUrl(), 'mysite.dev');
 
-        $this->assertEquals(base_url('ftp://it-is-a-ftp.dev'), 'it-is-a-ftp.dev');
-        $this->assertEquals(base_url('ftp://it-is-a-ftp.dev/foo/bar'), 'it-is-a-ftp.dev');
+        $this->assertEquals((new Http('ftp://it-is-a-ftp.dev'))->baseUrl(), 'it-is-a-ftp.dev');
+        $this->assertEquals((new Http('ftp://it-is-a-ftp.dev/foo/bar'))->baseUrl(), 'it-is-a-ftp.dev');
     }
 }

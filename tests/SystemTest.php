@@ -11,11 +11,11 @@ class SystemTest extends AbstractTestCase
 {
     public function testIsWindows()
     {
-        $this->assertEquals(false, System::isWindows());
+        $this->assertEquals(false, (new System())->isWindows());
     }
 
     public function testIsLinux()
     {
-        $this->assertEquals(true, System::isLinux());
+        $this->assertEquals(true, (new System())->isLinux());
     }
 }
