@@ -73,7 +73,7 @@ class Digits
     {
         $suffix = config('ah_helpers.digits.short_number', []);
 
-        if (array_key_exists((int)$length, $suffix)) {
+        if (array_key_exists((int) $length, $suffix)) {
             return $suffix[$length];
         }
 
