@@ -38,18 +38,7 @@ class Digits
         }
 
         $length = strlen((string) ((int) $value));
-
-        if ($length < 4) {
-            $length = 4;
-        } elseif ($length < 7) {
-            $length = 7;
-        } elseif ($length < 10) {
-            $length = 10;
-        } elseif ($length < 13) {
-            $length = 13;
-        } else {
-            $length = 16;
-        }
+        $length = ceil($length / 3) * 3 + 1;
 
         $suffix = self::suffix($length);
         $value = self::numberFormat($value, $length, $precision);
@@ -84,7 +73,7 @@ class Digits
     {
         $suffix = config('ah_helpers.digits.short_number', []);
 
-        if (array_key_exists($length, $suffix)) {
+        if (array_key_exists((int)$length, $suffix)) {
             return $suffix[$length];
         }
 
