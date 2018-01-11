@@ -37,44 +37,63 @@ class Digits
             throw new InvalidNumberException($value);
         }
 
-        if ($value < 1000) {
-            return $value;
+        $length = strlen((string)((int)$value));
+
+        if ($length < 4) {
+            $length = 4;
+        }
+        elseif ($length < 7) {
+            $length = 7;
+        }
+        elseif ($length < 10) {
+            $length = 10;
+        }
+        elseif ($length < 13) {
+            $length = 13;
+        }
+        else {
+            $length = 16;
         }
 
-        if ($value < 1000000) {
-            $value = self::numberFormat($value, 1000, $precision);
+        $suffix = self::suffix($length);
+        $value  = self::numberFormat($value, $length, $precision);
 
-            return $value.'K';
-        }
-
-        if ($value < 1000000000) {
-            $value = self::numberFormat($value, 1000000, $precision);
-
-            return $value.'M';
-        }
-
-        if ($value < 1000000000000) {
-            $value = self::numberFormat($value, 1000000000, $precision);
-
-            return $value.'B';
-        }
-
-        $value = self::numberFormat($value, 1000000000000, $precision);
-
-        return $value.'T+';
+        return $value . $suffix;
     }
 
     /**
      * Format a number with grouped with divider.
      *
      * @param int $value
-     * @param int $divider
+     * @param int $length
      * @param int $precision
      *
      * @return string
      */
-    private static function numberFormat($value = 0, $divider = 1000, $precision = 1)
+    private static function numberFormat($value = 0, $length = 4, $precision = 1)
     {
+        $divider = (double)bcpow(10, ($length - 4), 2);
+
         return round($value / $divider, $precision);
+    }
+
+    /**
+     * Getting the suffix for abbreviated numbers.
+     *
+     * @param int $length
+     *
+     * @return mixed
+     */
+    private static function suffix($length = 0)
+    {
+        $siffix = config('ah_helpers.digits.short_number', []);
+
+        if (array_key_exists($length, $siffix)) {
+            return $siffix[$length];
+        }
+
+        ksort($siffix);
+
+        return last($siffix);
     }
 }
