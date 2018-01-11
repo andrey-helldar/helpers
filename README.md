@@ -139,13 +139,13 @@ Sort an associative array in the order specified by an array of keys.
 Calculating the factorial of a number:
 
     echo factorial(int $n = 0) : int
-    echo \Helldar\Helpers\Support\Digits::factorial(int $n = 0) : int
+    echo (new \Helldar\Helpers\Support\Digits())->factorial(int $n = 0) : int
 
 
 Converts a number into a short version:
 
     echo short_number($n = 0, $precision = 1) : int|string
-    echo \Helldar\Helpers\Support\Digits::shortNumber($n = 0, $precision = 1) : int|string
+    echo (new \Helldar\Helpers\Support\Digits($n = 0))->shortNumber($precision = 1) : int|string
 
     Example:
 

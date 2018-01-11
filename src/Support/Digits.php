@@ -7,41 +7,55 @@ use Helldar\Helpers\Exceptions\InvalidNumberException;
 class Digits
 {
     /**
+     * @var int
+     */
+    private $digit = 0;
+
+    /**
+     * Digits constructor.
+     *
+     * @param int $digit
+     */
+    public function __construct($digit = 0)
+    {
+        $this->digit = $digit;
+    }
+
+    /**
      * Calculating the factorial of a number.
      *
      * @param int $n
      *
-     * @return int
+     * @return float|int
      */
-    public static function factorial($n = 0)
+    public function factorial($n = 0)
     {
         if ((int) $n == 0) {
             return 1;
         }
 
-        return (int) $n * self::factorial((int) $n - 1);
+        return (int) $n * $this->factorial((int) $n - 1);
     }
 
     /**
      * Converts a number into a short version.
-     * eg: 1000 >> 1k
+     * eg: 1000 >> 1K
      *
-     * @param int $value
      * @param int $precision
      *
      * @return int|string
      */
-    public static function shortNumber($value = 0, $precision = 1)
+    public function shortNumber($precision = 1)
     {
-        if (!is_numeric($value)) {
-            throw new InvalidNumberException($value);
+        if (!is_numeric($this->digit)) {
+            throw new InvalidNumberException($this->digit);
         }
 
-        $length = strlen((string) ((int) $value));
+        $length = strlen((string) ((int) $this->digit));
         $length = ceil($length / 3) * 3 + 1;
 
         $suffix = self::suffix($length);
-        $value = self::numberFormat($value, $length, $precision);
+        $value = self::numberFormat($length, $precision);
 
         return $value.$suffix;
     }
@@ -49,17 +63,16 @@ class Digits
     /**
      * Format a number with grouped with divider.
      *
-     * @param int $value
      * @param int $length
      * @param int $precision
      *
      * @return string
      */
-    private static function numberFormat($value = 0, $length = 4, $precision = 1)
+    private function numberFormat($length = 4, $precision = 1)
     {
         $divider = (double) bcpow(10, ($length - 4), 2);
 
-        return round($value / $divider, $precision);
+        return round($this->digit / $divider, $precision);
     }
 
     /**
@@ -69,7 +82,7 @@ class Digits
      *
      * @return mixed
      */
-    private static function suffix($length = 0)
+    private function suffix($length = 0)
     {
         $suffix = config('ah_helpers.digits.short_number', []);
 
