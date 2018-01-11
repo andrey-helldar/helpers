@@ -262,13 +262,13 @@ Replacing multiple spaces with a single space.
 Determine whether the current environment is Windows based:
 
     return is_windows() : bool
-    return \Helldar\Helpers\Support\System::isWindows() : bool
+    return (new \Helldar\Helpers\Support\System())->isWindows() : bool
 
 
 Determine whether the current environment is Linux based:
 
     return is_linux() : bool
-    return \Helldar\Helpers\Support\System::isLinux() : bool
+    return (new \Helldar\Helpers\Support\System())->isLinux() : bool
 
 [ [to top](#) | [to menu](#menu) ]
 

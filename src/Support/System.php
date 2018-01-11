@@ -9,7 +9,7 @@ class System
      *
      * @return bool
      */
-    public static function isWindows()
+    public function isWindows()
     {
         return mb_strtolower(substr(PHP_OS, 0, 3), 'UTF-8') === 'win';
     }
@@ -19,7 +19,7 @@ class System
      *
      * @return bool
      */
-    public static function isLinux()
+    public function isLinux()
     {
         return mb_strtolower(PHP_OS, 'UTF-8') === 'linux';
     }
