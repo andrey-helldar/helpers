@@ -1,6 +1,6 @@
 {
     "name": "andrey-helldar/helpers",
-    "description": "Functions that simplify the development process",
+    "description": "Helpers that simplify the development process",
     "type": "library",
     "license": "MIT",
     "homepage": "http://ai-rus.com",
