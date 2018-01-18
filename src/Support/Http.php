@@ -7,16 +7,16 @@ class Http
     /**
      * @var
      */
-    private $url;
+    private $value;
 
     /**
      * Http constructor.
      *
-     * @param $url
+     * @param $value
      */
-    public function __construct($url)
+    public function __construct($value)
     {
-        $this->url = $url;
+        $this->value = $value;
     }
 
     /**
@@ -30,7 +30,7 @@ class Http
      */
     public function mixUrl($manifestDirectory = '')
     {
-        return url(mix($this->url, $manifestDirectory));
+        return url(mix($this->value, $manifestDirectory));
     }
 
     /**
@@ -40,6 +40,34 @@ class Http
      */
     public function baseUrl()
     {
-        return parse_url($this->url, PHP_URL_HOST);
+        return parse_url($this->value, PHP_URL_HOST);
+    }
+
+    /**
+     * Reverse function for parse_url() (http://php.net/manual/en/function.parse-url.php).
+     *
+     * @see https://gist.github.com/Ellrion/f51ba0d40ae1d62eeae44fd1adf7b704
+     *
+     * @return string
+     */
+    public function buildUrl()
+    {
+        $scheme = isset($this->value['scheme']) ? ($this->value['scheme'] . '://') : '';
+
+        $host = $this->value['host'] ?? '';
+        $port = isset($this->value['port']) ? (':' . $this->value['port']) : '';
+
+        $user = $this->value['user'] ?? '';
+
+        $pass = isset($this->value['pass']) ? (':' . $this->value['pass']) : '';
+        $pass = ($user || $pass) ? ($pass . '@') : '';
+
+        $path = $this->value['path'] ?? '';
+        $path = $path ? ('/' . ltrim($path, '/')) : '';
+
+        $query    = isset($this->value['query']) ? ('?' . $this->value['query']) : '';
+        $fragment = isset($this->value['fragment']) ? ('#' . $this->value['fragment']) : '';
+
+        return implode('', [$scheme, $user, $pass, $host, $port, $path, $query, $fragment]);
     }
 }

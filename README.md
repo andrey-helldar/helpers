@@ -222,6 +222,34 @@ Get the domain name from the URL.
     return (new \Helldar\Helpers\Support\Http($url))
             ->baseUrl() : string
 
+
+Reverse function for parse_url() (http://php.net/manual/en/function.parse-url.php).
+
+The code is taken from [gist.github.com/Ellrion](https://gist.github.com/Ellrion/f51ba0d40ae1d62eeae44fd1adf7b704)
+
+    $parts1 = [
+        'scheme' => 'http',
+        'host'   => 'mysite.dev',
+    ];
+
+    $parts2 = [
+        'scheme'   => 'https',
+        'host'     => 'mysite.dev',
+        'port'     => 1234,
+        'user'     => 'foo',
+        'pass'     => 'bar',
+        'path'     => '/category/subcategory',
+        'query'    => 'page=1',
+        'fragment' => 'section=5',
+    ];
+
+    return build_url($parts1) : string
+    return (new \Helldar\Helpers\Support\Http($parts2))
+            ->buildUrl();
+
+    // returned 1: http://mysite.dev
+    // returned 2: https://foo:bar@mysite.dev:1234/category/subcategory?page=1#section=5
+
 [ [to top](#) | [to menu](#menu) ]
 
 

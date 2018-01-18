@@ -32,3 +32,20 @@ if (!function_exists('base_url')) {
             ->baseUrl();
     }
 }
+
+if (!function_exists('build_url')) {
+    /**
+     * Reverse function for parse_url() (http://php.net/manual/en/function.parse-url.php).
+     *
+     * @see https://gist.github.com/Ellrion/f51ba0d40ae1d62eeae44fd1adf7b704
+     *
+     * @param array $parts
+     *
+     * @return string
+     */
+    function build_url(array $parts = [])
+    {
+        return (new \Helldar\Helpers\Support\Http($parts))
+            ->buildUrl();
+    }
+}
