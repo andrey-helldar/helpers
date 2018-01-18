@@ -26,8 +26,12 @@ class Files
      */
     public function urlExists()
     {
-        $headers = get_headers($this->path);
+        try {
+            $headers = get_headers($this->path);
 
-        return stripos(reset($headers), '200 OK') !== false;
+            return stripos(reset($headers), '200 OK') !== false;
+        } catch (\Exception $e) {
+            return false;
+        }
     }
 }
