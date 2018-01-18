@@ -51,6 +51,7 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
                         ->setJson($app['json.factory']->make($generator, $data, $status, $options));
                 }
             );
+
             return $factory;
         });
     }
