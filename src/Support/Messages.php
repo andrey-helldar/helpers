@@ -36,7 +36,7 @@ class Messages
      */
     public function __construct(Store $session)
     {
-        $this->session  = $session;
+        $this->session = $session;
         $this->messages = new Collection();
 
         $this->ageFlash();
@@ -115,7 +115,7 @@ class Messages
      */
     protected function addMessage($text, $level = 'info', $data = [])
     {
-        $msg_object = (object)array_merge($data, compact('text', 'level'));
+        $msg_object = (object) array_merge($data, compact('text', 'level'));
 
         $this->messages->prepend($msg_object);
         $this->flash();
@@ -136,12 +136,12 @@ class Messages
 
         $messages = array_merge(
             $this->session->get($this->keyInStorage, []),
-            $this->session->get($this->keyInStorage . '_old', [])
+            $this->session->get($this->keyInStorage.'_old', [])
         );
 
         $messages = (new Collection($messages))
             ->map(function ($message) {
-                return (object)$message;
+                return (object) $message;
             });
 
         if (is_null($level)) {
@@ -172,7 +172,7 @@ class Messages
     {
         $data = $this->messages
             ->map(function ($message) {
-                return (array)$message;
+                return (array) $message;
             })
             ->toArray();
 
@@ -189,7 +189,7 @@ class Messages
         }
 
         $old_messages = $this->session->pull($this->keyInStorage);
-        $key_old      = $this->keyInStorage . '_old';
+        $key_old = $this->keyInStorage.'_old';
 
         $this->session->put($key_old, $old_messages);
         $this->session->push(self::OLD_FLASH_LARAVEL_SESSION_ENGINE_KEY, $key_old);
