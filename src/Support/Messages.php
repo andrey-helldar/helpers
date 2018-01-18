@@ -6,7 +6,7 @@ use Illuminate\Session\Store;
 use Illuminate\Support\Collection;
 
 /**
- * Class Messages
+ * Flash messages min service for Laravel (only backend).
  *
  * @see https://gist.github.com/Ellrion/7ee8085b35f0de8c6d386255f9dd16bb
  */
