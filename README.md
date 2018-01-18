@@ -56,6 +56,7 @@ Enjoy!
 * [Dumper](#dumper)
 * [Files](#files)
 * [Http](#http)
+* [Jsonable](#jsonable)
 * [Images](#images)
 * [Messages](#messages)
 * [Strings](#strings)
@@ -220,6 +221,32 @@ Get the domain name from the URL.
     return base_url($url) : string
     return (new \Helldar\Helpers\Support\Http($url))
             ->baseUrl() : string
+
+[ [to top](#) | [to menu](#menu) ]
+
+
+### Jsonable
+
+Convert the object to its JSON representation.
+
+The code is taken from [gist.github.com/Ellrion](https://gist.github.com/Ellrion/2c7648d3ebdef2cd8ed24ffa78cf1d3d)
+
+```php
+use Helldar\Traits\Jsonable;
+
+class MyClass
+{
+    use Jsonable;
+
+    public function __construct($data)
+    {
+        $this->setData($data);
+    }
+}
+
+$obj = new MyClass($data);
+echo $obj->toJson();
+```
 
 [ [to top](#) | [to menu](#menu) ]
 
