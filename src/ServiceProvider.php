@@ -2,6 +2,8 @@
 
 namespace Helldar\Helpers;
 
+use Helldar\Helpers\Support\Messages;
+
 class ServiceProvider extends \Illuminate\Support\ServiceProvider
 {
     /**
@@ -16,7 +18,7 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->singleton([Messages::class => 'flash']);
     }
 
     /**

@@ -57,6 +57,7 @@ Enjoy!
 * [Files](#files)
 * [Http](#http)
 * [Images](#images)
+* [Messages](#messages)
 * [Strings](#strings)
 * [Systems](#systems)
 
@@ -94,10 +95,10 @@ Push one or more elements onto the end of array:
 Push one a unique element onto the end of array:
 
     array_add_unique(array &$array, $value)
-    
+
     (new \Helldar\Helpers\Support\Arr())
             ->addUnique(&$array, $value = 'value')
-            
+
     (new \Helldar\Helpers\Support\Arr())
             ->addUnique(&$array, $value = ['value1', 'value2', ...])
 
@@ -230,6 +231,66 @@ Check the existence of the file and return the default value if it is missing:
     echo image_or_default(string $filename, $default = null) : string
     echo (new \Helldar\Helpers\Support\Images($filename))
             ->imageOrDefault($default = null) : string
+
+[ [to top](#) | [to menu](#menu) ]
+
+
+### Messages
+
+In Controllers:
+
+```php
+flash('Some info message');
+flash()->error('This is some error!')
+//flash()->warning
+//flash()->success
+//flash()->info
+```
+
+In Template:
+
+```
+@foreach(flash()->messages() as $message)
+<div>{{ $message->level }}: {{ $message->text }}</div>
+@endforeach
+```
+
+Or only one message level:
+
+```
+@foreach(flash()->messages('danger') as $message)
+<div class="alert-danger">{{ $message->text }}</div>
+@endforeach
+@foreach($errors->all() as $message)
+<div class="alert-danger">{{ $message }}</div>
+@endforeach
+```
+
+## Multiple messages
+
+```php
+flash()->warning('Warning One');
+flash()->warning('Warning Two');
+flash()->success('But we did it')
+```
+
+## Extra data for messages
+
+And possible add some extra data with message:
+
+```php
+flash()->error('This error show in modal', ['important' => true])
+```
+
+and read it in view
+
+```
+@foreach(flash()->messages() as $message)
+<div class="message" @if(!empty($message->important)) data-modal="" @endif>
+  {{ $message->text }}
+</div>
+@endforeach
+```
 
 [ [to top](#) | [to menu](#menu) ]
 
