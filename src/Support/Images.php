@@ -28,7 +28,7 @@ class Images
      */
     public function imageOrDefault($default = null)
     {
-        if (\Illuminate\Support\Str::contains($this->filename, ['http://', 'https://', 'ftp://'])) {
+        if (strripos($this->filename, '://') !== false) {
             return (new Files($this->filename))->urlExists() ? $this->filename : $default;
         }
 
