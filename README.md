@@ -237,6 +237,8 @@ Check the existence of the file and return the default value if it is missing:
 
 ### Messages
 
+The code is taken from [gist.github.com/Ellrion](https://gist.github.com/Ellrion/7ee8085b35f0de8c6d386255f9dd16bb)
+
 In Controllers:
 
 ```php
