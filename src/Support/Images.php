@@ -31,7 +31,7 @@ class Images
         if (\Illuminate\Support\Str::contains($this->filename, ['http://', 'https://', 'ftp://'])) {
             return (new Files($this->filename))->urlExists() ? $this->filename : $default;
         }
-        
+
         return file_exists($this->filename) ? $this->filename : $default;
     }
 }
