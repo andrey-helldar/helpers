@@ -28,6 +28,6 @@ class Files
     {
         $headers = get_headers($this->path);
 
-        return (bool) stripos(reset($headers), '200 OK');
+        return stripos(reset($headers), '200 OK') !== false;
     }
 }
