@@ -40,6 +40,7 @@
             "src/Helpers/files.php",
             "src/Helpers/http.php",
             "src/Helpers/images.php",
+            "src/Helpers/messages.php",
             "src/Helpers/strings.php",
             "src/Helpers/systems.php"
         ]
