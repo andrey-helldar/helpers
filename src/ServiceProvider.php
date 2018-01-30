@@ -2,9 +2,6 @@
 
 namespace Helldar\Helpers;
 
-use Helldar\Helpers\Factory\JsonFactory;
-use Helldar\Helpers\Support\Messages;
-
 class ServiceProvider extends \Illuminate\Support\ServiceProvider
 {
     /**
@@ -27,10 +24,12 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton([Messages::class => 'flash']);
+        $this->app->singleton('Helldar\Helpers\Support\Messages', function ($app) {
+            return (new \Helldar\Helpers\Support\Messages());
+        });
 
-        $this->app->singleton(['json.factory' => JsonFactory::class], function ($app) {
-            return (new JsonFactory($app))->setRootGeneratorNamespace('Helldar\\Helpers\\Factory');
+        $this->app->singleton('Helldar\Helpers\Factory\JsonFactory', function ($app) {
+            return (new \Helldar\Helpers\Factory\JsonFactory($app))->setRootGeneratorNamespace('Helldar\\Helpers\\Factory');
         });
 
         $this->registerResponseBuilder();
