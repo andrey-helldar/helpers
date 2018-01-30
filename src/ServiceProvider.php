@@ -24,15 +24,15 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton('Helldar\Helpers\Support\Messages', function ($app) {
-            return new \Helldar\Helpers\Support\Messages();
-        });
+        //$this->app->singleton('Helldar\Helpers\Support\Messages', function ($app) {
+        //    return new \Helldar\Helpers\Support\Messages();
+        //});
 
-        $this->app->singleton('Helldar\Helpers\Factory\JsonFactory', function ($app) {
-            return (new \Helldar\Helpers\Factory\JsonFactory($app))->setRootGeneratorNamespace('Helldar\\Helpers\\Factory');
-        });
+        //$this->app->singleton('Helldar\Helpers\Factory\JsonFactory', function ($app) {
+        //    return (new \Helldar\Helpers\Factory\JsonFactory($app))->setRootGeneratorNamespace('Helldar\\Helpers\\Factory');
+        //});
 
-        $this->registerResponseBuilder();
+        //$this->registerResponseBuilder();
     }
 
     /**
