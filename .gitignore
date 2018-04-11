@@ -1,3 +1,7 @@
-.idea/
-vendor/
-composer.lock
+/.idea
+/.vagrant
+/vendor
+*.log
+*.stackdump
+*.orig
+*.eslint*
