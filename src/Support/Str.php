@@ -2,6 +2,8 @@
 
 namespace Helldar\Helpers\Support;
 
+use Illuminate\Contracts\Support\Htmlable;
+
 class Str
 {
     /**
@@ -49,11 +51,17 @@ class Str
     /**
      * Escape HTML special characters in a string.
      *
+     * @var bool $double_encode
+     *
      * @return string
      */
-    public function e()
+    public function e($double_encode = true)
     {
-        return htmlspecialchars($this->value, ENT_QUOTES, 'UTF-8', false);
+        if($value instanceof Htmlable) {
+            return $value->toHtml();
+        }
+        
+        return htmlspecialchars($this->value, ENT_QUOTES, 'UTF-8', $double_encode);
     }
 
     /**
