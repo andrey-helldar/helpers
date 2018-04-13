@@ -51,16 +51,16 @@ class Str
     /**
      * Escape HTML special characters in a string.
      *
-     * @var bool $double_encode
+     * @var bool
      *
      * @return string
      */
     public function e($double_encode = true)
     {
-        if($value instanceof Htmlable) {
+        if ($value instanceof Htmlable) {
             return $value->toHtml();
         }
-        
+
         return htmlspecialchars($this->value, ENT_QUOTES, 'UTF-8', $double_encode);
     }
 
