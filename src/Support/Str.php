@@ -2,7 +2,6 @@
 
 namespace Helldar\Helpers\Support;
 
-
 use Illuminate\Contracts\Support\Htmlable;
 
 class Str

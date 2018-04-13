@@ -22,7 +22,7 @@ if (!function_exists('e')) {
      * Escape HTML special characters in a string.
      *
      * @param \Illuminate\Contracts\Support\Htmlable|string $value
-     * @param bool $doubleEncode
+     * @param bool                                          $doubleEncode
      *
      * @return string
      */
