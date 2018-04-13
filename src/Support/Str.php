@@ -2,6 +2,7 @@
 
 namespace Helldar\Helpers\Support;
 
+
 use Illuminate\Contracts\Support\Htmlable;
 
 class Str
@@ -22,7 +23,7 @@ class Str
     }
 
     /**
-     * The str_choice function translates the given language line with inflection.s
+     * The str_choice function translates the given language line with inflection.
      *
      * @param array  $choice
      * @param string $additional
@@ -57,8 +58,8 @@ class Str
      */
     public function e($double_encode = true)
     {
-        if ($value instanceof Htmlable) {
-            return $value->toHtml();
+        if ($this->value instanceof Htmlable) {
+            return $this->value->toHtml();
         }
 
         return htmlspecialchars($this->value, ENT_QUOTES, 'UTF-8', $double_encode);

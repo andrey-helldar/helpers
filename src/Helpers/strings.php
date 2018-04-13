@@ -21,14 +21,15 @@ if (!function_exists('e')) {
     /**
      * Escape HTML special characters in a string.
      *
-     * @param $value
+     * @param \Illuminate\Contracts\Support\Htmlable|string $value
+     * @param bool $doubleEncode
      *
      * @return string
      */
-    function e($value)
+    function e($value, $doubleEncode = true)
     {
         return (new \Helldar\Helpers\Support\Str($value))
-            ->e();
+            ->e($doubleEncode);
     }
 }
 
