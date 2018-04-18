@@ -38,26 +38,6 @@ class Arr
     }
 
     /**
-     * Get the first element of an array. Useful for method chaining.
-     *
-     * @return mixed
-     */
-    public function first()
-    {
-        return reset($this->array);
-    }
-
-    /**
-     * Get the last element from an array.
-     *
-     * @return mixed
-     */
-    public function last()
-    {
-        return end($this->array);
-    }
-
-    /**
      * Renaming array keys.
      * As the first parameter, a callback function is passed, which determines the actions for processing the value.
      * The output of the function must be a string with a name.
@@ -132,6 +112,6 @@ class Arr
     public function sortByKeysArray(array &$array, array $sorter)
     {
         $sorter = array_intersect($sorter, array_keys($array));
-        $array = array_merge(array_flip($sorter), $array);
+        $array  = array_merge(array_flip($sorter), $array);
     }
 }

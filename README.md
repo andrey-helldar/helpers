@@ -71,20 +71,6 @@ Returns the number of characters of the longest element in the array:
             ->arrayItemValueMaxLength() : int
 
 
-Get the first element of an array. Useful for method chaining:
-
-    return array_first(array $array = []) : mixed
-    return (new \Helldar\Helpers\Support\Arr(array $array = []))
-            ->arrayFirst() : mixed
-
-
-Get the last element from an array:
-
-    return array_last(array $array = []) : mixed
-    return (new \Helldar\Helpers\Support\Arr(array $array = []))
-            ->arrayLast() : mixed
-
-
 Push one or more elements onto the end of array:
 
     array_add(array &$array, $value)

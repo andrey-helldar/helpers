@@ -15,36 +15,6 @@ if (!function_exists('array_item_value_max_length')) {
     }
 }
 
-if (!function_exists('array_first')) {
-    /**
-     * Get the first element of an array. Useful for method chaining.
-     *
-     * @param array $array
-     *
-     * @return mixed
-     */
-    function array_first(array $array = [])
-    {
-        return (new \Helldar\Helpers\Support\Arr($array))
-            ->first();
-    }
-}
-
-if (!function_exists('array_last')) {
-    /**
-     * Get the last element from an array.
-     *
-     * @param array $array
-     *
-     * @return mixed
-     */
-    function array_last(array $array = [])
-    {
-        return (new \Helldar\Helpers\Support\Arr($array))
-            ->last();
-    }
-}
-
 if (!function_exists('array_size_max_value')) {
     /**
      * Get the size of the longest text element of the array.
