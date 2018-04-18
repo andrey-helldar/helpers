@@ -277,6 +277,19 @@ return (new \Helldar\Helpers\Support\Http($parts2))
 // returned 2: https://foo:bar@mysite.dev:1234/category/subcategory?page=1#section=5
 ```
 
+
+Retrieving the current subdomain name.
+
+```php
+return subdomain_name();
+
+return (new \Helldar\Helpers\Support\Http())
+        ->getSubdomain();
+
+// from domain `test.mysite.local` will return `test` (string).
+// from domain `mysite.local` will return `null` (null).
+```
+
 [ [to top](#) | [to menu](#menu) ]
 
 

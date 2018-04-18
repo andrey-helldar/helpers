@@ -49,3 +49,16 @@ if (!function_exists('build_url')) {
             ->buildUrl();
     }
 }
+
+if (!function_exists('subdomain_name')) {
+    /**
+     * Retrieving the current subdomain name.
+     *
+     * @return null|string
+     */
+    function subdomain_name()
+    {
+        return (new \Helldar\Helpers\Support\Http())
+            ->getSubdomain();
+    }
+}

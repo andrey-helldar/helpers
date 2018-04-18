@@ -14,7 +14,7 @@ class Http
      *
      * @param $value
      */
-    public function __construct($value)
+    public function __construct($value = null)
     {
         $this->value = $value;
     }
@@ -52,22 +52,38 @@ class Http
      */
     public function buildUrl()
     {
-        $scheme = isset($this->value['scheme']) ? ($this->value['scheme'].'://') : '';
+        $scheme = isset($this->value['scheme']) ? ($this->value['scheme'] . '://') : '';
 
         $host = $this->value['host'] ?? '';
-        $port = isset($this->value['port']) ? (':'.$this->value['port']) : '';
+        $port = isset($this->value['port']) ? (':' . $this->value['port']) : '';
 
         $user = $this->value['user'] ?? '';
 
-        $pass = isset($this->value['pass']) ? (':'.$this->value['pass']) : '';
-        $pass = ($user || $pass) ? ($pass.'@') : '';
+        $pass = isset($this->value['pass']) ? (':' . $this->value['pass']) : '';
+        $pass = ($user || $pass) ? ($pass . '@') : '';
 
         $path = $this->value['path'] ?? '';
-        $path = $path ? ('/'.ltrim($path, '/')) : '';
+        $path = $path ? ('/' . ltrim($path, '/')) : '';
 
-        $query = isset($this->value['query']) ? ('?'.$this->value['query']) : '';
-        $fragment = isset($this->value['fragment']) ? ('#'.$this->value['fragment']) : '';
+        $query    = isset($this->value['query']) ? ('?' . $this->value['query']) : '';
+        $fragment = isset($this->value['fragment']) ? ('#' . $this->value['fragment']) : '';
 
         return implode('', [$scheme, $user, $pass, $host, $port, $path, $query, $fragment]);
+    }
+
+    /**
+     * Retrieving the current subdomain name.
+     *
+     * @return null|string
+     */
+    public function getSubdomain()
+    {
+        $host = explode('.', request()->getHost());
+
+        if (sizeof($host) >= 2) {
+            return array_first($host);
+        }
+
+        return null;
     }
 }
