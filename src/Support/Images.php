@@ -28,6 +28,10 @@ class Images
      */
     public function imageOrDefault($default = null)
     {
+        if (!$this->filename) {
+            return $default;
+        }
+
         if (strripos($this->filename, '://') !== false) {
             return (new Files($this->filename))->urlExists() ? $this->filename : $default;
         }
