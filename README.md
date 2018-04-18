@@ -54,17 +54,40 @@ Enjoy!
 ### Menu
 
 * [Arrays](#arrays)
+    * [array_item_value_max_length](#array_item_value_max_length)
+    * [array_add](#array_add)
+    * [array_add_unique](#array_add_unique)
+    * [array_rename_keys](#array_rename_keys)
+    * [array_size_max_value](#array_size_max_value)
+    * [array_sort_by_keys_array](#array_sort_by_keys_array)
 * [Digits](#digits)
+    * [factorial](#factorial)
+    * [short_number](#short_number)
 * [Dumper](#dumper)
+    * [dd_sql](#dd_sql)
 * [Files](#files)
+    * [url_file_exists](#url_file_exists)
 * [Http](#http)
+    * [mix_url](#mix_url)
+    * [base_url](#base_url)
+    * [build_url](#build_url)
+    * [subdomain_name](#subdomain_name)
 * [Jsonable](#jsonable)
 * [Images](#images)
+    * [image_or_default](#image_or_default)
 * [Strings](#strings)
+    * [str_choice](#str_choice)
+    * [e](#e)
+    * [de](#de)
+    * [str_replace_spaces](#str_replace_spaces)
 * [Systems](#systems)
+    * [is_windows](#is_windows)
+    * [is_linux](#is_linux)
 
 
 ### Arrays
+
+#### array_item_value_max_length()
 
 Returns the number of characters of the longest element in the array:
 
@@ -72,19 +95,22 @@ Returns the number of characters of the longest element in the array:
 echo array_item_value_max_length(array $array = []) : int
 
 echo (new \Helldar\Helpers\Support\Arr(array $array = []))
-        ->arrayItemValueMaxLength() : int
+    ->arrayItemValueMaxLength() : int
 ```
 
 
+#### array_add()
 Push one or more elements onto the end of array:
 
 ```php
 array_add(array &$array, $value)
 
 (new \Helldar\Helpers\Support\Arr())
-        ->add(&$array, $value)
+    ->add(&$array, $value)
 ```
 
+
+#### array_add_unique()
 
 Push one a unique element onto the end of array:
 
@@ -92,12 +118,14 @@ Push one a unique element onto the end of array:
 array_add_unique(array &$array, $value)
 
 (new \Helldar\Helpers\Support\Arr())
-        ->addUnique(&$array, $value = 'value')
+    ->addUnique(&$array, $value = 'value')
 
 (new \Helldar\Helpers\Support\Arr())
-        ->addUnique(&$array, $value = ['value1', 'value2', ...])
+    ->addUnique(&$array, $value = ['value1', 'value2', ...])
 ```
 
+
+#### array_rename_keys()
 
 Renaming array keys.
 As the first parameter, a callback function is passed, which determines the actions for processing the value.
@@ -107,9 +135,11 @@ The output of the function must be a string with a name.
 return array_rename_keys($callback, array $array = []) : array
 
 return (new \Helldar\Helpers\Support\Arr(array $array = []))
-        ->arrayRenameKeys($callback) : array
+    ->arrayRenameKeys($callback) : array
 ```
 
+
+#### array_size_max_value()
 
 Get the size of the longest text element of the array:
 
@@ -117,9 +147,11 @@ Get the size of the longest text element of the array:
 return array_size_max_value(array $array = []) : int
 
 return (new \Helldar\Helpers\Support\Arr((array $array = []))
-        ->arraySizeOfMaxValue() : int
+    ->arraySizeOfMaxValue() : int
 ```
 
+
+#### array_sort_by_keys_array()
 
 Sort an associative array in the order specified by an array of keys.
 
@@ -127,7 +159,7 @@ Sort an associative array in the order specified by an array of keys.
 array_sort_by_keys_array($array, $sorter) : void
 
 (new \Helldar\Helpers\Support\Arr())
-        ->sortByKeysArray($array, $sorter) : void
+    ->sortByKeysArray($array, $sorter) : void
 ```
 
     Example:
@@ -154,15 +186,19 @@ Array
 
 ### Digits
 
+#### factorial()
+
 Calculating the factorial of a number:
 
 ```php
 echo factorial(int $n = 0) : int
 
 echo (new \Helldar\Helpers\Support\Digits())
-        ->factorial(int $n = 0) : int
+    ->factorial(int $n = 0) : int
 ```
 
+
+#### short_number()
 
 Converts a number into a short version:
 
@@ -170,7 +206,7 @@ Converts a number into a short version:
 echo short_number($n = 0, $precision = 1) : int|string
 
 echo (new \Helldar\Helpers\Support\Digits($n = 0))
-        ->shortNumber($precision = 1) : int|string
+    ->shortNumber($precision = 1) : int|string
 ```
 
     Example:
@@ -200,13 +236,15 @@ short_number(3000000000000);
 
 ### Dumper
 
+#### dd_sql()
+
 Dump the passed variables and end the script.
 
 ```php
 return dd_sql($query, bool $is_short = false, bool $is_return = false) : array|string|void
 
 return (new \Helldar\Helpers\Support\Dumper($query))
-        ->ddSql($is_short, $is_return) : array|string|void
+    ->ddSql($is_short, $is_return) : array|string|void
 ```
 
 [ [to top](#) | [to menu](#menu) ]
@@ -214,13 +252,15 @@ return (new \Helldar\Helpers\Support\Dumper($query))
 
 ### Files
 
+#### url_file_exists()
+
 Checks whether a file or directory exists on URL:
 
 ```php
 return url_file_exists($path) : bool
 
 return (new \Helldar\Helpers\Support\Files($path))
-        ->urlFileExists() : bool
+    ->urlFileExists() : bool
 ```
 
 [ [to top](#) | [to menu](#menu) ]
@@ -228,15 +268,19 @@ return (new \Helldar\Helpers\Support\Files($path))
 
 ### Http
 
+#### mix_url()
+
 Convert the relative path of a versioned Mix files to absolute.
 
 ```php
 return mix_url($path) : string
 
 return (new \Helldar\Helpers\Support\Http($path))
-        ->mixUrl() : string
+    ->mixUrl() : string
 ```
 
+
+#### base_url()
 
 Get the domain name from the URL.
 
@@ -244,9 +288,11 @@ Get the domain name from the URL.
 return base_url($url) : string
 
 return (new \Helldar\Helpers\Support\Http($url))
-        ->baseUrl() : string
+    ->baseUrl() : string
 ```
 
+
+#### build_url()
 
 Reverse function for parse_url() (http://php.net/manual/en/function.parse-url.php).
 
@@ -271,12 +317,14 @@ $parts2 = [
 
 return build_url($parts1) : string
 return (new \Helldar\Helpers\Support\Http($parts2))
-        ->buildUrl();
+    ->buildUrl();
 
 // returned 1: http://mysite.dev
 // returned 2: https://foo:bar@mysite.dev:1234/category/subcategory?page=1#section=5
 ```
 
+
+#### subdomain_name()
 
 Retrieving the current subdomain name.
 
@@ -284,7 +332,7 @@ Retrieving the current subdomain name.
 return subdomain_name();
 
 return (new \Helldar\Helpers\Support\Http())
-        ->getSubdomain();
+    ->getSubdomain();
 
 // from domain `test.mysite.local` will return `test` (string).
 // from domain `mysite.local` will return `null` (null).
@@ -321,13 +369,15 @@ echo $obj->toJson();
 
 ### Images
 
+#### image_or_default()
+
 Check the existence of the file and return the default value if it is missing:
 
 ```php
 echo image_or_default(string $filename, $default = null) : string
 
 echo (new \Helldar\Helpers\Support\Images($filename))
-        ->imageOrDefault($default = null) : string
+    ->imageOrDefault($default = null) : string
 ```
 
 [ [to top](#) | [to menu](#menu) ]
@@ -335,13 +385,15 @@ echo (new \Helldar\Helpers\Support\Images($filename))
 
 ### Strings
 
+#### str_choice()
+
 The str_choice function translates the given language line with inflection:
 
 ```php
 echo str_choice(int $num, array $choice = [], string $additional = '') : string
 
 echo (new \Helldar\Helpers\Support\Str($num))
-        ->choice(array $choice = [], string $additional = '') : string
+    ->choice(array $choice = [], string $additional = '') : string
 ```
 
     Example:
@@ -360,15 +412,19 @@ echo str_choice(20, ['пользователь', 'пользователя', 'п
 ```
 
 
+#### e()
+
 Escape HTML special characters in a string:
 
 ```php
 echo e($value) : string
 
 echo (new \Helldar\Helpers\Support\Str($value))
-        ->e() : string
+    ->e() : string
 ```
 
+
+#### de()
 
 Convert special HTML entities back to characters:
 
@@ -376,9 +432,11 @@ Convert special HTML entities back to characters:
 echo de($value) : string
 
 echo (new \Helldar\Helpers\Support\Str($value))
-        ->de() : string
+    ->de() : string
 ```
 
+
+#### str_replace_spaces()
 
 Replacing multiple spaces with a single space.
 
@@ -386,7 +444,7 @@ Replacing multiple spaces with a single space.
 echo str_replace_spaces($value) : string
 
 echo (new \Helldar\Helpers\Support\Str($value))
-        ->replaceSpaces() : string
+    ->replaceSpaces() : string
 ```
 
 [ [to top](#) | [to menu](#menu) ]
@@ -394,15 +452,19 @@ echo (new \Helldar\Helpers\Support\Str($value))
 
 ### Systems
 
+#### is_windows()
+
 Determine whether the current environment is Windows based:
 
 ```php
 return is_windows() : bool
 
 return (new \Helldar\Helpers\Support\System())
-        ->isWindows() : bool
+    ->isWindows() : bool
 ```
 
+
+#### is_linux()
 
 Determine whether the current environment is Linux based:
 
@@ -410,7 +472,7 @@ Determine whether the current environment is Linux based:
 return is_linux() : bool
 
 return (new \Helldar\Helpers\Support\System())
-        ->isLinux() : bool
+    ->isLinux() : bool
 ```
 
 [ [to top](#) | [to menu](#menu) ]
