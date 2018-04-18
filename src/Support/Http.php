@@ -81,7 +81,7 @@ class Http
         $host = explode('.', request()->getHost());
 
         if (sizeof($host) >= 2) {
-            return array_first($host);
+            return reset($host);
         }
 
         return null;
