@@ -34,15 +34,15 @@ class SlackNotify extends Notification
      */
     public function __construct($exception, $class_name, $title)
     {
-        $this->exception  = $exception;
+        $this->exception = $exception;
         $this->class_name = $class_name;
-        $this->title      = $title;
+        $this->title = $title;
     }
 
     /**
      * Get the notification's delivery channels.
      *
-     * @param  mixed $notifiable
+     * @param mixed $notifiable
      *
      * @return array
      */

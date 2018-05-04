@@ -63,10 +63,10 @@ class Notifications
 
     private function title()
     {
-        $server      = request()->getHost() ?? config('app.url');
+        $server = request()->getHost() ?? config('app.url');
         $environment = config('app.env');
 
-        $this->title = sprintf("Exception | Server - %s | Environment - %s", $server, $environment);
+        $this->title = sprintf('Exception | Server - %s | Environment - %s', $server, $environment);
     }
 
     /**
