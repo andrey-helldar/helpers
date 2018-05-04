@@ -40,7 +40,7 @@ class Notifications
         return config('helpers.notify.slack.webhook');
     }
 
-    public function send()
+    public function slack()
     {
         $slack = new SlackNotify($this->exception, $this->title());
 
