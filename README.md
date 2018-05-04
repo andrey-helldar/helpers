@@ -75,6 +75,8 @@ Enjoy!
 * [Jsonable](#jsonable)
 * [Images](#images)
     * [image_or_default](#image_or_default)
+* [Notifications](#notifications)
+    * [notify_slack](#notify_slack)
 * [Strings](#strings)
     * [str_choice](#str_choice)
     * [e](#e)
@@ -379,6 +381,34 @@ echo image_or_default(string $filename, $default = null) : string
 echo (new \Helldar\Helpers\Support\Images($filename))
     ->imageOrDefault($default = null) : string
 ```
+
+[ [to top](#) | [to menu](#menu) ]
+
+
+### Notifications
+
+#### notify_slack()
+
+Notification of code errors in the Slack channel:
+
+```php
+class TestSlack extends Command
+{
+    public function handle()
+    {
+        try {
+            $value = $w;
+        } catch (\Exception $exception) {
+            notify_slack($exception, __CLASS__);
+        }
+    }
+}
+```
+
+If an error occurs in the Slack channel, a message like this will appear:
+
+![2018-05-05 01-19-30 slack](https://user-images.githubusercontent.com/10347617/39655465-6258e780-5002-11e8-8952-fdcacd1bd7cf.png)
+
 
 [ [to top](#) | [to menu](#menu) ]
 
