@@ -2,6 +2,8 @@
 
 if (!function_exists('notify')) {
     /**
+     * Notification of code errors in the Slack channel.
+     *
      * @param \Exception $exception
      * @param string     $class_name
      */

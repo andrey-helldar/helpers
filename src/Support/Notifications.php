@@ -23,8 +23,8 @@ class Notifications
     /**
      * Notifications constructor.
      *
-     * @param \Exception $exception
-     * @param string     $class_name
+     * @param        $exception
+     * @param string $class_name
      */
     public function __construct($exception, string $class_name)
     {
@@ -40,6 +40,9 @@ class Notifications
         return config('helpers.notify.slack.webhook');
     }
 
+    /**
+     * Notification of code errors in the Slack channel.
+     */
     public function slack()
     {
         $slack = new SlackNotify($this->exception, $this->title());
