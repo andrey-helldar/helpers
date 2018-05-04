@@ -52,21 +52,21 @@ class Http
      */
     public function buildUrl()
     {
-        $scheme = isset($this->value['scheme']) ? ($this->value['scheme'].'://') : '';
+        $scheme = isset($this->value['scheme']) ? ($this->value['scheme'] . '://') : '';
 
         $host = $this->value['host'] ?? '';
-        $port = isset($this->value['port']) ? (':'.$this->value['port']) : '';
+        $port = isset($this->value['port']) ? (':' . $this->value['port']) : '';
 
         $user = $this->value['user'] ?? '';
 
-        $pass = isset($this->value['pass']) ? (':'.$this->value['pass']) : '';
-        $pass = ($user || $pass) ? ($pass.'@') : '';
+        $pass = isset($this->value['pass']) ? (':' . $this->value['pass']) : '';
+        $pass = ($user || $pass) ? ($pass . '@') : '';
 
         $path = $this->value['path'] ?? '';
-        $path = $path ? ('/'.ltrim($path, '/')) : '';
+        $path = $path ? ('/' . ltrim($path, '/')) : '';
 
-        $query = isset($this->value['query']) ? ('?'.$this->value['query']) : '';
-        $fragment = isset($this->value['fragment']) ? ('#'.$this->value['fragment']) : '';
+        $query = isset($this->value['query']) ? ('?' . $this->value['query']) : '';
+        $fragment = isset($this->value['fragment']) ? ('#' . $this->value['fragment']) : '';
 
         return implode('', [$scheme, $user, $pass, $host, $port, $path, $query, $fragment]);
     }

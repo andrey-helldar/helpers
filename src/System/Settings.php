@@ -18,7 +18,7 @@ class Settings
      */
     public function __construct($filename)
     {
-        $filename = str_finish((__DIR__.'/../config/'.$filename), '.php');
+        $filename = str_finish((__DIR__ . '/../config/' . $filename), '.php');
 
         if (file_exists($filename)) {
             $this->config = (require $filename);

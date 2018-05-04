@@ -78,7 +78,7 @@ class JsonFactory
             return ucfirst(camel_case($str));
         });
 
-        return $this->rootNamespace.'\\'.implode('\\', $path->all());
+        return $this->rootNamespace . '\\' . implode('\\', $path->all());
     }
 
     /**
