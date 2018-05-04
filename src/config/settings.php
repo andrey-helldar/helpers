@@ -13,10 +13,6 @@ return [
 
     'notify' => [
         'slack' => [
-            /*
-             * @see https://laravel.com/docs/5.6/notifications#slack-notifications
-             * @see https://youtu.be/BgpKR9NZ1M4
-             */
             'webhook' => env('SLACK_WEBHOOK_LOGS'),
             'channel' => null,
         ],
