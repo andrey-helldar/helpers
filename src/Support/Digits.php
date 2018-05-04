@@ -58,7 +58,7 @@ class Digits
         $suffix = $this->suffix($length);
         $value = $this->numberFormat($length, $precision);
 
-        return $value.$suffix;
+        return $value . $suffix;
     }
 
     /**
