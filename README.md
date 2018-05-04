@@ -44,6 +44,12 @@ If you don't use auto-discovery, add the ServiceProvider to the providers array 
 Helldar\Helpers\LaravelServiceProvider::class,
 ```
 
+You can also publish the config file to change implementations (ie. interface to specific class):
+
+```
+php artisan vendor:publish --provider="Helldar\Helpers\ServiceProvider"
+```
+
 Now you can use helpers or access directly to interfaces.
 
 Enjoy!
@@ -408,6 +414,8 @@ class TestSlack extends Command
 If an error occurs in the Slack channel, a message like this will appear:
 
 ![2018-05-05 01-19-30 slack](https://user-images.githubusercontent.com/10347617/39655465-6258e780-5002-11e8-8952-fdcacd1bd7cf.png)
+
+To specify a link to a channel, see the [settings file](src/config/settings.php) (`config/helpers.php` in your app).
 
 
 [ [to top](#) | [to menu](#menu) ]
