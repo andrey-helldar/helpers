@@ -18,24 +18,7 @@ class Notifications
     /**
      * @var string
      */
-    protected $route;
-
-    /**
-     * @var string
-     */
     protected $class_name;
-
-    /**
-     * @param $route
-     *
-     * @return $this
-     */
-    public function route($route)
-    {
-        $this->route = $route;
-
-        return $this;
-    }
 
     /**
      * @param \Exception $exception
@@ -63,10 +46,10 @@ class Notifications
 
     private function title()
     {
-        $server = request()->getHost() ?? config('app.url');
+        $server      = request()->getHost() ?? config('app.url');
         $environment = config('app.env');
 
-        $this->title = sprintf('Exception | Server - %s | Environment - %s', $server, $environment);
+        return sprintf('Exception | Server - %s | Environment - %s', $server, $environment);
     }
 
     /**
@@ -74,11 +57,13 @@ class Notifications
      */
     public function routeNotificationForSlack()
     {
-        return $this->route;
+        return config('helpers.notify.slack');
     }
 
     public function send()
     {
-        $this->notify(new SlackNotify($this->exception, $this->class_name, $this->title()));
+        $slack = new SlackNotify($this->exception, $this->class_name, $this->title());
+
+        $this->notify($slack);
     }
 }
