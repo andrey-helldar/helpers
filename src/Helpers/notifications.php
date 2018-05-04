@@ -2,10 +2,12 @@
 
 if (!function_exists('notify')) {
     /**
-     * @return \Helldar\Helpers\Support\Notifications
+     * @param \Exception $exception
+     * @param string     $class_name
      */
-    function notify()
+    function notify($exception, string $class_name)
     {
-        return \Helldar\Helpers\Support\Notifications::init();
+        (new \Helldar\Helpers\Support\Notifications($exception, $class_name))
+            ->send();
     }
 }

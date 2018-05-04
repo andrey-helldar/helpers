@@ -18,25 +18,18 @@ class SlackNotify extends Notification
     /**
      * @var string
      */
-    protected $class_name;
-
-    /**
-     * @var string
-     */
     protected $title;
 
     /**
      * Create a new notification instance.
      *
      * @param $exception
-     * @param $class_name
      * @param $title
      */
-    public function __construct($exception, $class_name, $title)
+    public function __construct($exception, $title)
     {
         $this->exception = $exception;
-        $this->class_name = $class_name;
-        $this->title = $title;
+        $this->title     = $title;
     }
 
     /**
@@ -63,12 +56,13 @@ class SlackNotify extends Notification
         return (new SlackMessage())
             ->error()
             ->content($this->title)
+            ->to(config('helpers.notify.slack.channel'))
             ->attachment(function ($attachment) {
-                $content = sprintf("%s\nLine: %s", $this->exception->getFile(), $this->exception->getLine());
-
                 $attachment
                     ->title($this->exception->getMessage())
-                    ->content($content);
+                    ->content($this->exception->getTraceAsString())
+                    ->footer(config('app.name'))
+                    ->timestamp(now());
             });
     }
 }
