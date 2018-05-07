@@ -4,9 +4,9 @@ declare(strict_types = 1);
 
 namespace Helldar\Helpers\Tests;
 
-use GrahamCampbell\TestBench\AbstractTestCase;
+use PHPUnit\Framework\TestCase;
 
-class DumperTest extends AbstractTestCase
+class DumperTest extends TestCase
 {
     public function testDdSql()
     {

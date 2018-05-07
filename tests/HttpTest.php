@@ -4,10 +4,10 @@ declare(strict_types = 1);
 
 namespace Helldar\Helpers\Tests;
 
-use GrahamCampbell\TestBench\AbstractTestCase;
 use Helldar\Helpers\Support\Http;
+use PHPUnit\Framework\TestCase;
 
-class HttpTest extends AbstractTestCase
+class HttpTest extends TestCase
 {
     public function testMixUrl()
     {

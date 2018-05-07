@@ -4,10 +4,10 @@ declare(strict_types = 1);
 
 namespace Helldar\Helpers\Tests;
 
-use GrahamCampbell\TestBench\AbstractTestCase;
 use Helldar\Helpers\Support\System;
+use PHPUnit\Framework\TestCase;
 
-class SystemTest extends AbstractTestCase
+class SystemTest extends TestCase
 {
     public function testIsWindows()
     {

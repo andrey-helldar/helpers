@@ -4,11 +4,11 @@ declare(strict_types = 1);
 
 namespace Helldar\Helpers\Tests;
 
-use GrahamCampbell\TestBench\AbstractTestCase;
 use Helldar\Helpers\Exceptions\InvalidNumberException;
 use Helldar\Helpers\Support\Digits;
+use PHPUnit\Framework\TestCase;
 
-class DigitsTest extends AbstractTestCase
+class DigitsTest extends TestCase
 {
     public function testFactorial()
     {

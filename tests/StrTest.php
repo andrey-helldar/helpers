@@ -4,10 +4,10 @@ declare(strict_types = 1);
 
 namespace Helldar\Helpers\Tests;
 
-use GrahamCampbell\TestBench\AbstractTestCase;
 use Helldar\Helpers\Support\Str;
+use PHPUnit\Framework\TestCase;
 
-class StrTest extends AbstractTestCase
+class StrTest extends TestCase
 {
     public function testChoice()
     {

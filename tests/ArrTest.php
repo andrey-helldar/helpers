@@ -4,10 +4,10 @@ declare(strict_types = 1);
 
 namespace Helldar\Helpers\Tests;
 
-use GrahamCampbell\TestBench\AbstractTestCase;
 use Helldar\Helpers\Support\Arr;
+use PHPUnit\Framework\TestCase;
 
-class ArrTest extends AbstractTestCase
+class ArrTest extends TestCase
 {
     public function testArrayItemValueMaxLength()
     {

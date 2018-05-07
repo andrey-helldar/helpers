@@ -4,10 +4,10 @@ declare(strict_types = 1);
 
 namespace Helldar\Helpers\Tests;
 
-use GrahamCampbell\TestBench\AbstractTestCase;
 use Helldar\Helpers\Support\Images;
+use PHPUnit\Framework\TestCase;
 
-class ImagesTest extends AbstractTestCase
+class ImagesTest extends TestCase
 {
     public function testImageOrDefault()
     {

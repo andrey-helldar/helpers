@@ -4,10 +4,10 @@ declare(strict_types = 1);
 
 namespace Helldar\Helpers\Tests;
 
-use GrahamCampbell\TestBench\AbstractTestCase;
 use Helldar\Helpers\Support\Files;
+use PHPUnit\Framework\TestCase;
 
-class FilesTest extends AbstractTestCase
+class FilesTest extends TestCase
 {
     public function testUrlFileExists()
     {
