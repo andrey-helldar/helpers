@@ -82,7 +82,7 @@ Enjoy!
 * [Images](#images)
     * [image_or_default](#image_or_default)
 * [Notifications](#notifications)
-    * [notify_slack](#notify_slack)
+    * [notify slack](#notify-slack)
 * [Strings](#strings)
     * [str_choice](#str_choice)
     * [e](#e)
@@ -393,7 +393,7 @@ echo (new \Helldar\Helpers\Support\Images($filename))
 
 ### Notifications
 
-#### notify_slack()
+#### notify slack
 
 Notification of code errors in the Slack channel:
 
@@ -405,7 +405,8 @@ class TestSlack extends Command
         try {
             $value = $w;
         } catch (\Exception $exception) {
-            notify_slack($exception, __CLASS__);
+            notify($exception, __CLASS__)
+                ->slack();
         }
     }
 }

@@ -3,12 +3,11 @@
 namespace Helldar\Helpers\Support;
 
 use Helldar\Helpers\Notifications\SlackNotify;
-use Helldar\Helpers\Traits\Init;
 use Illuminate\Notifications\Notifiable;
 
 class Notifications
 {
-    use Notifiable, Init;
+    use Notifiable;
 
     /**
      * @var string
@@ -28,11 +27,13 @@ class Notifications
      */
     public function __construct($exception, string $class_name)
     {
-        $this->exception = $exception;
+        $this->exception  = $exception;
         $this->class_name = $class_name;
     }
 
     /**
+     * Route notifications for the Slack channel.
+     *
      * @return string
      */
     public function routeNotificationForSlack()
@@ -42,17 +43,21 @@ class Notifications
 
     /**
      * Notification of code errors in the Slack channel.
+     *
+     * @return $this
      */
     public function slack()
     {
-        $slack = new SlackNotify($this->exception, $this->title());
+        $slack = new SlackNotify($this->exception, $this->titleForSlack());
 
         $this->notify($slack);
+
+        return $this;
     }
 
-    private function title()
+    private function titleForSlack()
     {
-        $server = request()->getHost() ?? config('app.url');
+        $server      = request()->getHost() ?? config('app.url');
         $environment = config('app.env');
 
         return implode("\n", [
