@@ -405,7 +405,7 @@ class TestSlack extends Command
         try {
             $value = $w;
         } catch (\Exception $exception) {
-            notify($exception, __CLASS__)
+            notify($exception, get_class())
                 ->slack();
         }
     }
