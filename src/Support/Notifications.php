@@ -9,10 +9,7 @@ class Notifications
 {
     use Notifiable;
 
-    /**
-     * @var string
-     */
-    protected $class_name;
+    protected $object;
 
     /**
      * @var \Exception
@@ -23,11 +20,12 @@ class Notifications
      * Notifications constructor.
      *
      * @param \Exception $exception
+     * @param            $object
      */
-    public function __construct($exception)
+    public function __construct($exception, $object)
     {
         $this->exception = $exception;
-        $this->class_name = get_class($exception);
+        $this->object    = $object;
     }
 
     /**
@@ -68,12 +66,12 @@ class Notifications
 
     private function titleForSlack()
     {
-        $server = request()->getHost() ?? config('app.url');
+        $server      = request()->getHost() ?? config('app.url');
         $environment = config('app.env');
 
         return implode("\n", [
-            sprintf('*Exception | Server - %s | Environment - %s*', $server, $environment),
-            sprintf('`%s`', $this->class_name),
+            sprintf('*%s | Server - %s | Environment - %s*', get_class($this->exception), $server, $environment),
+            sprintf('`%s`', get_class($this->object)),
         ]);
     }
 }
