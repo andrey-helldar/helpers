@@ -83,6 +83,7 @@ Enjoy!
     * [image_or_default](#image_or_default)
 * [Notifications](#notifications)
     * [notify slack](#notify-slack)
+    * [notify mail](#notify-mail)
 * [Strings](#strings)
     * [str_choice](#str_choice)
     * [e](#e)
@@ -418,6 +419,36 @@ If an error occurs in the Slack channel, a message like this will appear:
 
 To specify a link to a channel, see the [settings file](src/config/helpers.php) (`config/helpers.php` in your app).
 
+#### notify mail
+
+Notification of code errors in the Email:
+
+```php
+class TestSlack extends Command
+{
+    public function handle()
+    {
+        try {
+            $value = $w;
+        } catch (\Exception $exception) {
+            notify($exception, get_class())
+                ->mail();
+        }
+    }
+}
+```
+
+To send email notifications, the [squareboat/sneaker](https://github.com/squareboat/sneaker) package is used.
+
+#### Global
+
+You can also combine notifications by sending to several places at once:
+
+```php
+notify($exception, get_class())
+    ->slack()
+    ->mail();
+```
 
 [ [to top](#) | [to menu](#menu) ]
 

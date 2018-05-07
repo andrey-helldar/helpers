@@ -23,7 +23,8 @@
         "php": ">=7.1",
         "illuminate/support": "^5.5",
         "illuminate/contracts": "^5.5",
-        "guzzlehttp/guzzle": "^6.3"
+        "guzzlehttp/guzzle": "^6.3",
+        "squareboat/sneaker": "^4.0"
     },
     "require-dev": {
         "graham-campbell/testbench": "^4.0|^5.0",
