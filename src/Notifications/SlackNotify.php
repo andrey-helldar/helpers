@@ -3,6 +3,7 @@
 namespace Helldar\Helpers\Notifications;
 
 use Illuminate\Bus\Queueable;
+use Illuminate\Notifications\Messages\SlackAttachment;
 use Illuminate\Notifications\Messages\SlackMessage;
 use Illuminate\Notifications\Notification;
 
@@ -29,7 +30,7 @@ class SlackNotify extends Notification
     public function __construct($exception, $title)
     {
         $this->exception = $exception;
-        $this->title = $title;
+        $this->title     = $title;
     }
 
     /**
@@ -56,13 +57,38 @@ class SlackNotify extends Notification
         return (new SlackMessage())
             ->error()
             ->content($this->title)
+            ->from($this->username(), $this->icon())
             ->to(config('helpers.notify.slack.channel'))
-            ->attachment(function ($attachment) {
+            ->attachment(function (SlackAttachment $attachment) {
                 $attachment
                     ->title($this->exception->getMessage())
                     ->content($this->exception->getTraceAsString())
                     ->footer(config('app.name'))
                     ->timestamp(now());
             });
+    }
+
+    /**
+     * Get username for the port name.
+     *
+     * @return mixed|string
+     */
+    private function username()
+    {
+        if ($username = config('helpers.notify.slack.username')) {
+            return $username;
+        }
+
+        return request()->getHost();
+    }
+
+    /**
+     * Get the user icon.
+     *
+     * @return string|null
+     */
+    private function icon()
+    {
+        return config('helpers.notify.slack.icon');
     }
 }
