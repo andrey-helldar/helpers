@@ -416,7 +416,7 @@ If an error occurs in the Slack channel, a message like this will appear:
 
 ![2018-05-05 01-19-30 slack](https://user-images.githubusercontent.com/10347617/39655465-6258e780-5002-11e8-8952-fdcacd1bd7cf.png)
 
-To specify a link to a channel, see the [settings file](src/config/settings.php) (`config/helpers.php` in your app).
+To specify a link to a channel, see the [settings file](src/config/helpers.php) (`config/helpers.php` in your app).
 
 
 [ [to top](#) | [to menu](#menu) ]
