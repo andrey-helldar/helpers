@@ -22,13 +22,12 @@ class Notifications
     /**
      * Notifications constructor.
      *
-     * @param        $exception
-     * @param string $class_name
+     * @param \Exception $exception
      */
-    public function __construct($exception, string $class_name)
+    public function __construct($exception)
     {
         $this->exception  = $exception;
-        $this->class_name = $class_name;
+        $this->class_name = get_class($exception);
     }
 
     /**

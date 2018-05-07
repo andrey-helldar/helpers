@@ -406,7 +406,7 @@ class TestSlack extends Command
         try {
             $value = $w;
         } catch (\Exception $exception) {
-            notify($exception, get_class())
+            notify($exception)
                 ->slack();
         }
     }
@@ -431,7 +431,7 @@ class TestSlack extends Command
         try {
             $value = $w;
         } catch (\Exception $exception) {
-            notify($exception, get_class())
+            notify($exception)
                 ->mail();
         }
     }
@@ -445,7 +445,7 @@ To send email notifications, the [squareboat/sneaker](https://github.com/squareb
 You can also combine notifications by sending to several places at once:
 
 ```php
-notify($exception, get_class())
+notify($exception)
     ->slack()
     ->mail();
 ```
