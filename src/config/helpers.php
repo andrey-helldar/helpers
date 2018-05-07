@@ -7,7 +7,7 @@ return [
         ],
         'email' => [
             'from' => env('MAIL_FROM_ADDRESS'),
-            'to'   => env('MAIL_ADMIN_ADDRESS'),
+            'to' => env('MAIL_ADMIN_ADDRESS'),
         ],
     ],
 ];
