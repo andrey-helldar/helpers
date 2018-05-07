@@ -9,8 +9,6 @@ class Notifications
 {
     use Notifiable;
 
-    protected $object;
-
     /**
      * @var \Exception
      */
@@ -20,12 +18,10 @@ class Notifications
      * Notifications constructor.
      *
      * @param \Exception $exception
-     * @param            $object
      */
-    public function __construct($exception, $object)
+    public function __construct($exception)
     {
         $this->exception = $exception;
-        $this->object = $object;
     }
 
     /**
@@ -71,7 +67,6 @@ class Notifications
 
         return implode("\n", [
             sprintf('*%s | Server - %s | Environment - %s*', get_class($this->exception), $server, $environment),
-            sprintf('`%s`', get_class($this->object)),
             sprintf('`%s:%s`', $this->exception->getFile(), $this->exception->getLine()),
         ]);
     }

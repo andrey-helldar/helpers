@@ -399,7 +399,7 @@ echo (new \Helldar\Helpers\Support\Images($filename))
 You can also combine notifications by sending to several places at once:
 
 ```php
-notify($exception, $this)
+notify($exception)
     ->slack()
     ->mail();
 ```
@@ -416,7 +416,7 @@ class TestSlack extends Command
         try {
             $value = $w;
         } catch (\Exception $exception) {
-            notify($exception, $this)
+            notify($exception)
                 ->slack();
         }
     }
@@ -441,7 +441,7 @@ class TestSlack extends Command
         try {
             $value = $w;
         } catch (\Exception $exception) {
-            notify($exception, $this)
+            notify($exception)
                 ->mail();
         }
     }
