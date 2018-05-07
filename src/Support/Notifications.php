@@ -27,7 +27,7 @@ class Notifications
      */
     public function __construct($exception, string $class_name)
     {
-        $this->exception  = $exception;
+        $this->exception = $exception;
         $this->class_name = $class_name;
     }
 
@@ -57,7 +57,7 @@ class Notifications
 
     private function titleForSlack()
     {
-        $server      = request()->getHost() ?? config('app.url');
+        $server = request()->getHost() ?? config('app.url');
         $environment = config('app.env');
 
         return implode("\n", [
