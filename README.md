@@ -6,8 +6,8 @@ Functions that simplify the development process.
 
 <p align="center">
 <a href="https://travis-ci.org/andrey-helldar/helpers"><img src="https://travis-ci.org/andrey-helldar/helpers.svg?branch=master&style=flat-square" alt="Build Status" /></a>
-<a href="https://packagist.org/packages/andrey-helldar/helpers"><img src="https://img.shields.io/packagist/dt/andrey-helldar/helpers.svg?style=flat-square" alt="Total Downloads" /></a>
-<a href="https://poser.pugx.org/show/andrey-helldar/helpers"><img src="https://poser.pugx.org/andrey-helldar/helpers/v/stable?format=flat-square" alt="Latest Stable Version" /></a>
+<a href="https://packagist.org/packages/andrey-helldar/helpers"><img src="https://poser.pugx.org/andrey-helldar/helpers/downloads?format=flat-square" alt="Total Downloads" /></a>
+<a href="https://poser.pugx.org/show/andrey-helldar/helpers"><img src="https://poser.pugx.org/andrey-helldar/helpers/version?format=flat-square" alt="Latest Stable Version" /></a>
 <a href="https://poser.pugx.org/show/andrey-helldar/helpers"><img src="https://poser.pugx.org/andrey-helldar/helpers/v/unstable?format=flat-square" alt="Latest Unstable Version" /></a>
 <a href="https://poser.pugx.org/show/andrey-helldar/helpers"><img src="https://poser.pugx.org/andrey-helldar/helpers/license?format=flat-square" alt="License" /></a>
 </p>
