@@ -394,6 +394,16 @@ echo (new \Helldar\Helpers\Support\Images($filename))
 
 ### Notifications
 
+#### Global
+
+You can also combine notifications by sending to several places at once:
+
+```php
+notify($exception)
+    ->slack()
+    ->mail();
+```
+
 #### notify slack
 
 Notification of code errors in the Slack channel:
@@ -439,16 +449,6 @@ class TestSlack extends Command
 ```
 
 To send email notifications, the [squareboat/sneaker](https://github.com/squareboat/sneaker) package is used.
-
-#### Global
-
-You can also combine notifications by sending to several places at once:
-
-```php
-notify($exception)
-    ->slack()
-    ->mail();
-```
 
 [ [to top](#) | [to menu](#menu) ]
 
