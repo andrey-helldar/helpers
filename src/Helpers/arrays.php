@@ -48,20 +48,6 @@ if (!function_exists('array_rename_keys')) {
     }
 }
 
-if (!function_exists('array_add')) {
-    /**
-     * Push one or more elements onto the end of array.
-     *
-     * @param $array
-     * @param $value
-     */
-    function array_add(&$array, $value)
-    {
-        (new \Helldar\Helpers\Support\Arr())
-            ->add($array, $value);
-    }
-}
-
 if (!function_exists('array_add_unique')) {
     /**
      * Push one a unique element onto the end of array.
