@@ -2,6 +2,7 @@
 
 namespace Helldar\Helpers\Notifications;
 
+use Carbon\Carbon;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Messages\SlackAttachment;
 use Illuminate\Notifications\Messages\SlackMessage;
@@ -64,7 +65,7 @@ class SlackNotify extends Notification
                     ->title($this->exception->getMessage())
                     ->content($this->exception->getTraceAsString())
                     ->footer(config('app.name'))
-                    ->timestamp(now());
+                    ->timestamp(Carbon::now());
             });
     }
 
