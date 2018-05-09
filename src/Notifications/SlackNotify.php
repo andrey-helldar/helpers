@@ -76,7 +76,7 @@ class SlackNotify extends Notification
     private function username()
     {
         if ($username = config('helpers.notify.slack.username')) {
-            return $username;
+            return str_after($username, '://');
         }
 
         return request()->getHost();
