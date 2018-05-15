@@ -1,5 +1,7 @@
 <?php
 
+use Helldar\Helpers\Support\System;
+
 if (!function_exists('is_windows')) {
     /**
      * Determine whether the current environment is Windows based.
@@ -8,7 +10,7 @@ if (!function_exists('is_windows')) {
      */
     function is_windows()
     {
-        return (new \Helldar\Helpers\Support\System())
+        return (new System())
             ->isWindows();
     }
 }
@@ -21,7 +23,7 @@ if (!function_exists('is_linux')) {
      */
     function is_linux()
     {
-        return (new \Helldar\Helpers\Support\System())
+        return (new System())
             ->isLinux();
     }
 }

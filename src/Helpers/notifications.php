@@ -1,5 +1,7 @@
 <?php
 
+use Helldar\Helpers\Support\Notifications;
+
 if (!function_exists('notify')) {
     /**
      * Notification of code errors.
@@ -8,7 +10,7 @@ if (!function_exists('notify')) {
      */
     function notify($exception)
     {
-        (new \Helldar\Helpers\Support\Notifications($exception))
+        (new Notifications($exception))
             ->send();
     }
 }
