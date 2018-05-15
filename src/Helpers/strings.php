@@ -6,8 +6,8 @@ if (!function_exists('str_choice')) {
     /**
      * The str_choice function translates the given language line with inflection:
      *
-     * @param int $num
-     * @param array $choice
+     * @param int    $num
+     * @param array  $choice
      * @param string $additional
      *
      * @return string
@@ -24,7 +24,7 @@ if (!function_exists('e')) {
      * Escape HTML special characters in a string.
      *
      * @param \Illuminate\Contracts\Support\Htmlable|string $value
-     * @param bool $doubleEncode
+     * @param bool                                          $doubleEncode
      *
      * @return string
      */
