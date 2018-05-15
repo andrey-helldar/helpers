@@ -8,7 +8,7 @@ if (!function_exists('image_or_default')) {
      *
      * @param null|string $filename
      * @param null|string $default
-     * @param bool $is_asset
+     * @param bool        $is_asset
      *
      * @return null|string
      */
