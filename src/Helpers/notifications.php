@@ -1,15 +1,16 @@
 <?php
 
+use Helldar\Helpers\Support\Notifications;
+
 if (!function_exists('notify')) {
     /**
      * Notification of code errors.
      *
-     * @param \Exception $exception
-     *
-     * @return \Helldar\Helpers\Support\Notifications
+     * @param $exception
      */
     function notify($exception)
     {
-        return new \Helldar\Helpers\Support\Notifications($exception);
+        (new Notifications($exception))
+            ->send();
     }
 }

@@ -70,17 +70,6 @@ class Arr
     }
 
     /**
-     * Push one or more elements onto the end of array.
-     *
-     * @param $array
-     * @param $value
-     */
-    public function add(&$array, $value)
-    {
-        array_push($array, $value);
-    }
-
-    /**
      * Push one a unique element onto the end of array.
      *
      * @param array       $array

@@ -34,12 +34,38 @@ class Notifications
         return config('helpers.notify.slack.webhook');
     }
 
+    public function send()
+    {
+        $this->toMail();
+        $this->toSlack();
+    }
+
+    /**
+     * @deprecated
+     *
+     * @return $this
+     */
+    public function slack()
+    {
+        return $this;
+    }
+
+    /**
+     * @deprecated
+     *
+     * @return $this
+     */
+    public function mail()
+    {
+        return $this;
+    }
+
     /**
      * Notification of code errors in the Slack channel.
      *
      * @return $this
      */
-    public function slack()
+    private function toSlack()
     {
         $slack = new SlackNotify($this->exception, $this->titleForSlack());
 
@@ -53,7 +79,7 @@ class Notifications
      *
      * @return $this
      */
-    public function mail()
+    private function toMail()
     {
         app('sneaker')->captureException($this->exception);
 

@@ -1,5 +1,7 @@
 <?php
 
+use Helldar\Helpers\Support\Dumper;
+
 if (!function_exists('dd_sql')) {
     /**
      * Dump the passed variables and end the script.
@@ -12,7 +14,7 @@ if (!function_exists('dd_sql')) {
      */
     function dd_sql($query, bool $is_short = false, bool $is_return = false)
     {
-        return (new \Helldar\Helpers\Support\Dumper($query))
+        return (new Dumper($query))
             ->ddSql($is_short, $is_return);
     }
 }

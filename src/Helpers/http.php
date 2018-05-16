@@ -1,5 +1,7 @@
 <?php
 
+use Helldar\Helpers\Support\Http;
+
 if (!function_exists('mix_url')) {
     /**
      * Convert the relative path of a versioned Mix files to absolute.
@@ -13,7 +15,7 @@ if (!function_exists('mix_url')) {
      */
     function mix_url($url, $manifestDirectory = '')
     {
-        return (new \Helldar\Helpers\Support\Http($url))
+        return (new Http($url))
             ->mixUrl($manifestDirectory);
     }
 }
@@ -28,7 +30,7 @@ if (!function_exists('base_url')) {
      */
     function base_url($url)
     {
-        return (new \Helldar\Helpers\Support\Http($url))
+        return (new Http($url))
             ->baseUrl();
     }
 }
@@ -45,7 +47,7 @@ if (!function_exists('build_url')) {
      */
     function build_url(array $parts = [])
     {
-        return (new \Helldar\Helpers\Support\Http($parts))
+        return (new Http($parts))
             ->buildUrl();
     }
 }
@@ -58,7 +60,7 @@ if (!function_exists('subdomain_name')) {
      */
     function subdomain_name()
     {
-        return (new \Helldar\Helpers\Support\Http())
+        return (new Http())
             ->getSubdomain();
     }
 }

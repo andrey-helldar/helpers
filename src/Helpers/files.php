@@ -1,5 +1,7 @@
 <?php
 
+use Helldar\Helpers\Support\Files;
+
 if (!function_exists('url_file_exists')) {
     /**
      * Checks whether a file or directory exists on URL.
@@ -10,7 +12,7 @@ if (!function_exists('url_file_exists')) {
      */
     function url_file_exists($path)
     {
-        return (new \Helldar\Helpers\Support\Files($path))
+        return (new Files($path))
             ->urlExists();
     }
 }

@@ -61,7 +61,6 @@ Enjoy!
 
 * [Arrays](#arrays)
     * [array_item_value_max_length](#array_item_value_max_length)
-    * [array_add](#array_add)
     * [array_add_unique](#array_add_unique)
     * [array_rename_keys](#array_rename_keys)
     * [array_size_max_value](#array_size_max_value)
@@ -106,17 +105,6 @@ echo array_item_value_max_length(array $array = []) : int
 
 echo (new \Helldar\Helpers\Support\Arr(array $array = []))
     ->arrayItemValueMaxLength() : int
-```
-
-
-#### array_add()
-Push one or more elements onto the end of array:
-
-```php
-array_add(array &$array, $value)
-
-(new \Helldar\Helpers\Support\Arr())
-    ->add(&$array, $value)
 ```
 
 

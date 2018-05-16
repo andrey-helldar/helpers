@@ -1,5 +1,7 @@
 <?php
 
+use Helldar\Helpers\Support\Images;
+
 if (!function_exists('image_or_default')) {
     /**
      * Check the existence of the file and return the default value if it is missing.
@@ -12,7 +14,7 @@ if (!function_exists('image_or_default')) {
      */
     function image_or_default($filename, $default = null, $is_asset = true)
     {
-        $path = (new \Helldar\Helpers\Support\Images($filename))
+        $path = (new Images($filename))
             ->imageOrDefault($default);
 
         return $is_asset ? asset($path) : $path;

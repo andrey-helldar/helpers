@@ -1,5 +1,7 @@
 <?php
 
+use Helldar\Helpers\Support\Arr;
+
 if (!function_exists('array_item_value_max_length')) {
     /**
      * Returns the number of characters of the longest element in the array.
@@ -10,7 +12,7 @@ if (!function_exists('array_item_value_max_length')) {
      */
     function array_item_value_max_length(array $array = [])
     {
-        return (new \Helldar\Helpers\Support\Arr($array))
+        return (new Arr($array))
             ->itemValueMaxLength();
     }
 }
@@ -25,7 +27,7 @@ if (!function_exists('array_size_max_value')) {
      */
     function array_size_max_value(array $array = [])
     {
-        return (new \Helldar\Helpers\Support\Arr($array))
+        return (new Arr($array))
             ->sizeOfMaxValue();
     }
 }
@@ -43,22 +45,8 @@ if (!function_exists('array_rename_keys')) {
      */
     function array_rename_keys($callback, array $array = [])
     {
-        return (new \Helldar\Helpers\Support\Arr($array))
+        return (new Arr($array))
             ->renameKeys($callback);
-    }
-}
-
-if (!function_exists('array_add')) {
-    /**
-     * Push one or more elements onto the end of array.
-     *
-     * @param $array
-     * @param $value
-     */
-    function array_add(&$array, $value)
-    {
-        (new \Helldar\Helpers\Support\Arr())
-            ->add($array, $value);
     }
 }
 
@@ -71,7 +59,7 @@ if (!function_exists('array_add_unique')) {
      */
     function array_add_unique(&$array, $value)
     {
-        (new \Helldar\Helpers\Support\Arr())
+        (new Arr())
             ->addUnique($array, $value);
     }
 }
@@ -102,7 +90,7 @@ if (!function_exists('array_sort_by_keys_array')) {
      */
     function array_sort_by_keys_array(array &$array, array $sorter)
     {
-        (new \Helldar\Helpers\Support\Arr())
+        (new Arr())
             ->sortByKeysArray($array, $sorter);
     }
 }

@@ -1,5 +1,7 @@
 <?php
 
+use Helldar\Helpers\Support\Digits;
+
 if (!function_exists('factorial')) {
     /**
      * Calculating the factorial of a number.
@@ -10,7 +12,7 @@ if (!function_exists('factorial')) {
      */
     function factorial(int $n = 0)
     {
-        return (new \Helldar\Helpers\Support\Digits())
+        return (new Digits())
             ->factorial($n);
     }
 }
@@ -27,7 +29,7 @@ if (!function_exists('short_number')) {
      */
     function short_number($n = 0, $precision = 1)
     {
-        return (new \Helldar\Helpers\Support\Digits($n))
+        return (new Digits($n))
             ->shortNumber($precision);
     }
 }

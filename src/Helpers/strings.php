@@ -1,5 +1,7 @@
 <?php
 
+use Helldar\Helpers\Support\Str;
+
 if (!function_exists('str_choice')) {
     /**
      * The str_choice function translates the given language line with inflection:
@@ -12,7 +14,7 @@ if (!function_exists('str_choice')) {
      */
     function str_choice(int $num, array $choice = [], string $additional = '')
     {
-        return (new \Helldar\Helpers\Support\Str($num))
+        return (new Str($num))
             ->choice($choice, $additional);
     }
 }
@@ -28,7 +30,7 @@ if (!function_exists('e')) {
      */
     function e($value, $doubleEncode = true)
     {
-        return (new \Helldar\Helpers\Support\Str($value))
+        return (new Str($value))
             ->e($doubleEncode);
     }
 }
@@ -43,7 +45,7 @@ if (!function_exists('de')) {
      */
     function de($value)
     {
-        return (new \Helldar\Helpers\Support\Str($value))
+        return (new Str($value))
             ->de();
     }
 }
@@ -58,7 +60,7 @@ if (!function_exists('str_replace_spaces')) {
      */
     function str_replace_spaces($value)
     {
-        return (new \Helldar\Helpers\Support\Str($value))
+        return (new Str($value))
             ->replaceSpaces();
     }
 }
