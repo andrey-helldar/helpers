@@ -82,8 +82,9 @@ Enjoy!
 * [Images](#images)
     * [image_or_default](#image_or_default)
 * [Notifications](#notifications)
-    * [notify slack](#notify-slack)
-    * [notify mail](#notify-mail)
+    * [using](#notify-using)
+    * [slack](#notify-slack)
+    * [mail](#notify-mail)
 * [Strings](#strings)
     * [str_choice](#str_choice)
     * [e](#e)
@@ -394,34 +395,26 @@ echo (new \Helldar\Helpers\Support\Images($filename))
 
 ### Notifications
 
-#### Global
+#### Notify Using
 
-You can also combine notifications by sending to several places at once:
+To send error notifications, use the `notify()` helper:
 
 ```php
-notify($exception)
-    ->slack()
-    ->mail();
+try {
+    $foo = $bar
+} catch(\Exception $exception) {
+    notify($exception);
+}
 ```
 
 #### notify slack
 
-Notification of code errors in the Slack channel:
+To send notifications to the Slack channel, add a link to the webhook in the env file:
 
-```php
-class TestSlack extends Command
-{
-    public function handle()
-    {
-        try {
-            $value = $w;
-        } catch (\Exception $exception) {
-            notify($exception)
-                ->slack();
-        }
-    }
-}
 ```
+SLACK_WEBHOOK_LOGS=https://hooks.slack.com/services/xxxxxxxxx/yyyyyyyyy/zzzzzzzzz
+```
+
 
 If an error occurs in the Slack channel, a message like this will appear:
 
@@ -431,24 +424,9 @@ To specify a link to a channel, see the [settings file](src/config/helpers.php) 
 
 #### notify mail
 
-Notification of code errors in the Email:
+To send error notifications to the email, we use the [squareboat/sneaker](https://github.com/squareboat/sneaker) package.
 
-```php
-class TestSlack extends Command
-{
-    public function handle()
-    {
-        try {
-            $value = $w;
-        } catch (\Exception $exception) {
-            notify($exception)
-                ->mail();
-        }
-    }
-}
-```
-
-To send email notifications, the [squareboat/sneaker](https://github.com/squareboat/sneaker) package is used.
+Use its settings to send notifications to the mail.
 
 [ [to top](#) | [to menu](#menu) ]
 
