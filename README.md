@@ -2,14 +2,14 @@
 
 Functions that simplify the development process.
 
-![helpers](https://user-images.githubusercontent.com/10347617/40196790-3d3d3e52-5a1a-11e8-98fc-12232e75b24b.png)
+![helpers](https://user-images.githubusercontent.com/10347617/40197726-f252894e-5a1c-11e8-8466-0f7fcd186e26.png)
 
 <p align="center">
     <a href="https://styleci.io/repos/103963472"><img src="https://styleci.io/repos/103963472/shield" alt="StyleCI" /></a>
     <a href="https://packagist.org/packages/andrey-helldar/helpers"><img src="https://poser.pugx.org/andrey-helldar/helpers/downloads?format=flat-square" alt="Total Downloads" /></a>
     <a href="https://packagist.org/packages/andrey-helldar/helpers"><img src="https://poser.pugx.org/andrey-helldar/helpers/version?format=flat-square" alt="Latest Stable Version" /></a>
     <a href="https://packagist.org/packages/andrey-helldar/helpers"><img src="https://poser.pugx.org/andrey-helldar/helpers/v/unstable?format=flat-square" alt="Latest Unstable Version" /></a>
-    <a href="https://packagist.org/packages/andrey-helldar/helpers"><img src="https://poser.pugx.org/andrey-helldar/helpers/license?format=flat-square" alt="License" /></a>
+    <a href="LICENSE"><img src="https://poser.pugx.org/andrey-helldar/helpers/license?format=flat-square" alt="License" /></a>
 </p>
 
 
