@@ -2,21 +2,14 @@
 
 Functions that simplify the development process.
 
-![Helpers for Laravel 5.5+](https://user-images.githubusercontent.com/10347617/30551794-67b9d35e-9ca4-11e7-8e86-1db1b456a2a5.jpg)
+![helpers](https://user-images.githubusercontent.com/10347617/40196790-3d3d3e52-5a1a-11e8-98fc-12232e75b24b.png)
 
 <p align="center">
-<a href="https://travis-ci.org/andrey-helldar/helpers"><img src="https://travis-ci.org/andrey-helldar/helpers.svg?branch=master&style=flat-square" alt="Build Status" /></a>
-<a href="https://packagist.org/packages/andrey-helldar/helpers"><img src="https://poser.pugx.org/andrey-helldar/helpers/downloads?format=flat-square" alt="Total Downloads" /></a>
-<a href="https://poser.pugx.org/show/andrey-helldar/helpers"><img src="https://poser.pugx.org/andrey-helldar/helpers/version?format=flat-square" alt="Latest Stable Version" /></a>
-<a href="https://poser.pugx.org/show/andrey-helldar/helpers"><img src="https://poser.pugx.org/andrey-helldar/helpers/v/unstable?format=flat-square" alt="Latest Unstable Version" /></a>
-<a href="https://poser.pugx.org/show/andrey-helldar/helpers"><img src="https://poser.pugx.org/andrey-helldar/helpers/license?format=flat-square" alt="License" /></a>
-</p>
-
-
-<p align="center">
-<a href='https://www.versioneye.com/user/projects/59bff8eb0fb24f003d2ef836'><img src='https://www.versioneye.com/user/projects/59bff8eb0fb24f003d2ef836/badge.svg?style=flat-square' alt="Dependency Status" /></a>
-<a href="https://styleci.io/repos/103963472"><img src="https://styleci.io/repos/103963472/shield" alt="StyleCI" /></a>
-<a href="https://php-eye.com/package/andrey-helldar/helpers"><img src="https://php-eye.com/badge/andrey-helldar/helpers/tested.svg?style=flat-square" alt="PHP-Eye" /></a>
+    <a href="https://styleci.io/repos/103963472"><img src="https://styleci.io/repos/103963472/shield" alt="StyleCI" /></a>
+    <a href="https://packagist.org/packages/andrey-helldar/helpers"><img src="https://poser.pugx.org/andrey-helldar/helpers/downloads?format=flat-square" alt="Total Downloads" /></a>
+    <a href="https://packagist.org/packages/andrey-helldar/helpers"><img src="https://poser.pugx.org/andrey-helldar/helpers/version?format=flat-square" alt="Latest Stable Version" /></a>
+    <a href="https://packagist.org/packages/andrey-helldar/helpers"><img src="https://poser.pugx.org/andrey-helldar/helpers/v/unstable?format=flat-square" alt="Latest Unstable Version" /></a>
+    <a href="https://packagist.org/packages/andrey-helldar/helpers"><img src="https://poser.pugx.org/andrey-helldar/helpers/license?format=flat-square" alt="License" /></a>
 </p>
 
 
