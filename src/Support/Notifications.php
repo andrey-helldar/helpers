@@ -88,7 +88,7 @@ class Notifications
 
     private function titleForSlack()
     {
-        $server = request()->getHost() ?? config('app.url');
+        $server      = request()->getHost() ?? config('app.url');
         $environment = config('app.env');
 
         return implode("\n", [

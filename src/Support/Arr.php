@@ -101,6 +101,6 @@ class Arr
     public function sortByKeysArray(array &$array, array $sorter)
     {
         $sorter = array_intersect($sorter, array_keys($array));
-        $array = array_merge(array_flip($sorter), $array);
+        $array  = array_merge(array_flip($sorter), $array);
     }
 }

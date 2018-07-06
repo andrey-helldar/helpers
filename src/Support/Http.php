@@ -65,7 +65,7 @@ class Http
         $path = $this->value['path'] ?? '';
         $path = $path ? ('/' . ltrim($path, '/')) : '';
 
-        $query = isset($this->value['query']) ? ('?' . $this->value['query']) : '';
+        $query    = isset($this->value['query']) ? ('?' . $this->value['query']) : '';
         $fragment = isset($this->value['fragment']) ? ('#' . $this->value['fragment']) : '';
 
         return implode('', [$scheme, $user, $pass, $host, $port, $path, $query, $fragment]);
