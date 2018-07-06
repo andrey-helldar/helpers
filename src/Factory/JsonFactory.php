@@ -48,7 +48,7 @@ class JsonFactory
     public function make($generator, $data, $options = 0)
     {
         $generatorClass = $this->getGeneratorClass($generator);
-        $generator = $this->app->make($generatorClass, compact('data'));
+        $generator      = $this->app->make($generatorClass, compact('data'));
 
         if ($generator instanceof JsonSerializable) {
             return json_encode($generator->jsonSerialize(), $options);

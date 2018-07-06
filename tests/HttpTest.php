@@ -30,16 +30,16 @@ class HttpTest extends TestCase
     {
         $parts1 = [
             'scheme' => 'http',
-            'host' => 'mysite.dev',
+            'host'   => 'mysite.dev',
         ];
         $parts2 = [
-            'scheme' => 'https',
-            'host' => 'mysite.dev',
-            'port' => 1234,
-            'user' => 'foo',
-            'pass' => 'bar',
-            'path' => '/category/subcategory',
-            'query' => 'page=1',
+            'scheme'   => 'https',
+            'host'     => 'mysite.dev',
+            'port'     => 1234,
+            'user'     => 'foo',
+            'pass'     => 'bar',
+            'path'     => '/category/subcategory',
+            'query'    => 'page=1',
             'fragment' => 'section=5',
         ];
 

@@ -43,7 +43,7 @@ class Dumper
             return is_int($binding) || is_float($binding) ? $binding : "'{$binding}'";
         }, $this->query->getBindings());
 
-        $raw = vsprintf(str_replace(['%', '?'], ['%%', '%s'], $sql), $bindings);
+        $raw      = vsprintf(str_replace(['%', '?'], ['%%', '%s'], $sql), $bindings);
         $bindings = $this->query->getRawBindings();
 
         if ($is_return) {

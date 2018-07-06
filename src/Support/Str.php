@@ -32,8 +32,8 @@ class Str
     public function choice(array $choice = [], string $additional = '')
     {
         $result = $choice[0] ?? '';
-        $num = (int) $this->value;
-        $mod = $num % 10;
+        $num    = (int) $this->value;
+        $mod    = $num % 10;
 
         if ($mod == 0 || ($mod >= 5 && $mod <= 9) || ($num % 100 >= 11 && $num % 100 <= 20)) {
             $result = $choice[2] ?? '';

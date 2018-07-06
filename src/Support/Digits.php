@@ -56,7 +56,7 @@ class Digits
         $length = ceil($length / 3) * 3 + 1;
 
         $suffix = $this->suffix($length);
-        $value = $this->numberFormat($length, $precision);
+        $value  = $this->numberFormat($length, $precision);
 
         return $value . $suffix;
     }
