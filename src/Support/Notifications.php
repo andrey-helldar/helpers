@@ -45,6 +45,10 @@ class Notifications
      */
     private function toSlack()
     {
+        if (!config('helpers.notify.slack.enable')) {
+            return;
+        }
+
         $slack = new SlackNotify($this->exception, $this->titleForSlack());
 
         $this->notify($slack);

@@ -6,6 +6,8 @@ return [
         'queue'  => 'default',
 
         'slack' => [
+            'enable' => env('EXCEPTION_SLACK_ENABLE', true),
+
             /*
              * Webhook URL.
              * Send your JSON payloads to this URL.
