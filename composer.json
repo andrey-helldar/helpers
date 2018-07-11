@@ -21,9 +21,11 @@
     },
     "require": {
         "php": ">=7.1",
-        "illuminate/support": "^5.5",
-        "illuminate/contracts": "^5.5",
         "guzzlehttp/guzzle": "^6.3",
+        "illuminate/bus": "^5.5",
+        "illuminate/contracts": "^5.5",
+        "illuminate/queue": "^5.5",
+        "illuminate/support": "^5.5",
         "squareboat/sneaker": "^4.0"
     },
     "require-dev": {
