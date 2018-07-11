@@ -41,49 +41,21 @@ class Notifications
     }
 
     /**
-     * @deprecated
-     *
-     * @return $this
-     */
-    public function slack()
-    {
-        return $this;
-    }
-
-    /**
-     * @deprecated
-     *
-     * @return $this
-     */
-    public function mail()
-    {
-        return $this;
-    }
-
-    /**
      * Notification of code errors in the Slack channel.
-     *
-     * @return $this
      */
     private function toSlack()
     {
         $slack = new SlackNotify($this->exception, $this->titleForSlack());
 
         $this->notify($slack);
-
-        return $this;
     }
 
     /**
      * Notification of code errors in the Email.
-     *
-     * @return $this
      */
     private function toMail()
     {
         app('sneaker')->captureException($this->exception);
-
-        return $this;
     }
 
     private function titleForSlack()

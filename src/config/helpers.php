@@ -2,6 +2,9 @@
 
 return [
     'notify' => [
+        'enable' => env('EXCEPTION_NOTIFY_ENABLE', true),
+        'queue'  => 'default',
+
         'slack' => [
             /*
              * Webhook URL.

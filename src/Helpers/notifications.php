@@ -1,6 +1,6 @@
 <?php
 
-use Helldar\Helpers\Support\Notifications;
+use Helldar\Helpers\Jobs\NotificationJob;
 
 if (!function_exists('notify')) {
     /**
@@ -10,7 +10,11 @@ if (!function_exists('notify')) {
      */
     function notify($exception)
     {
-        (new Notifications($exception))
-            ->send();
+        if (!config('helpers.notify.enable')) {
+            return;
+        }
+
+        NotificationJob::dispatch($exception)
+            ->onQueue(config('helpers.notify.queue', 'default'));
     }
 }
