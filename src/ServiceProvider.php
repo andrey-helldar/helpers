@@ -19,6 +19,8 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
         $this->publishes([
             __DIR__ . '/config/helpers.php' => config_path('helpers.php'),
         ]);
+
+        $this->loadMigrationsFrom(__DIR__ . '/migrations');
     }
 
     /**
