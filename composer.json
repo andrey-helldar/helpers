@@ -27,7 +27,7 @@
         "illuminate/queue": "^5.5",
         "illuminate/notifications": "^5.5",
         "illuminate/support": "^5.5",
-        "squareboat/sneaker": "^4.0"
+        "squareboat/sneaker": "^5.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^7.0"
