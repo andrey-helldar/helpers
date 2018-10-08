@@ -9,12 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 class HttpTest extends TestCase
 {
-    public function testMixUrl()
-    {
-        $this->assertEquals(true, true);
-    }
-
-    public function baseUrl()
+    public function testBaseUrl()
     {
         $this->assertEquals((new Http('http://localhost'))->baseUrl(), 'localhost');
         $this->assertEquals((new Http('http://localhost/foo/bar'))->baseUrl(), 'localhost');

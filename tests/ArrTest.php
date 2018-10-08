@@ -20,25 +20,7 @@ class ArrTest extends TestCase
         $this->assertEquals(19, (new Arr($arr3))->itemValueMaxLength());
     }
 
-    public function arrayFirst()
-    {
-        $arr1 = [123, 345, 546, 56756, 354, [123123, 4332]];
-        $arr2 = ['foo', 324234, 34, 6, '54y', '3tr', 2, [123123, 4332]];
-
-        $this->assertEquals(123, (new Arr($arr1))->first());
-        $this->assertEquals('foo', (new Arr($arr2))->first());
-    }
-
-    public function arrayLast()
-    {
-        $arr1 = [123, 345, 546, 56756, 354, [123123, 4332]];
-        $arr2 = ['foo', 324234, 34, 6, '3tr', 2, [123123, 4332], '54y'];
-
-        $this->assertEquals([123123, 4332], (new Arr($arr1))->last());
-        $this->assertEquals('54y', (new Arr($arr2))->last());
-    }
-
-    public function sortByKeysArray()
+    public function testSortByKeysArray()
     {
         $arr = ['q' => 1, 'r' => 2, 's' => 5, 'w' => 123];
 
