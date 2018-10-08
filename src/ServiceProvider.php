@@ -16,11 +16,7 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
      */
     public function boot()
     {
-        $this->publishes([
-            __DIR__ . '/config/helpers.php' => config_path('helpers.php'),
-        ]);
-
-        $this->loadMigrationsFrom(__DIR__ . '/migrations');
+        //
     }
 
     /**
@@ -28,7 +24,7 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__ . '/config/helpers.php', 'helpers');
+        //
     }
 
     /**

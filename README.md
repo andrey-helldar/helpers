@@ -74,9 +74,6 @@ Enjoy!
 * [Images](#images)
     * [image_or_default](#image_or_default)
 * [Notifications](#notifications)
-    * [using](#notify-using)
-    * [slack](#notify-slack)
-    * [mail](#notify-mail)
 * [Strings](#strings)
     * [str_choice](#str_choice)
     * [e](#e)
@@ -376,38 +373,7 @@ echo (new \Helldar\Helpers\Support\Images($filename))
 
 ### Notifications
 
-#### Notify Using
-
-To send error notifications, use the `notify()` helper:
-
-```php
-try {
-    $foo = $bar
-} catch(\Exception $exception) {
-    notify($exception);
-}
-```
-
-#### notify slack
-
-To send notifications to the Slack channel, add a link to the webhook in the env file:
-
-```
-SLACK_WEBHOOK_LOGS=https://hooks.slack.com/services/xxxxxxxxx/yyyyyyyyy/zzzzzzzzz
-```
-
-
-If an error occurs in the Slack channel, a message like this will appear:
-
-![2018-05-05 01-19-30 slack](https://user-images.githubusercontent.com/10347617/39655465-6258e780-5002-11e8-8952-fdcacd1bd7cf.png)
-
-To specify a link to a channel, see the [settings file](src/config/helpers.php) (`config/helpers.php` in your app).
-
-#### notify mail
-
-To send error notifications to the email, we use the [squareboat/sneaker](https://github.com/squareboat/sneaker) package.
-
-Use its settings to send notifications to the mail.
+Notification helpers were placed in a separate package [andrey-helldar/notify-exceptions](https://github.com/andrey-helldar/notify-exceptions).
 
 [ [to top](#) | [to menu](#menu) ]
 

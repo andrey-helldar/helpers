@@ -22,12 +22,8 @@
     "require": {
         "php": ">=7.1",
         "guzzlehttp/guzzle": "^6.3",
-        "illuminate/bus": "^5.5",
         "illuminate/contracts": "^5.5",
-        "illuminate/queue": "^5.5",
-        "illuminate/notifications": "^5.5",
-        "illuminate/support": "^5.5",
-        "squareboat/sneaker": "^5.0"
+        "illuminate/support": "^5.5"
     },
     "require-dev": {
         "phpunit/phpunit": "^7.0"
@@ -43,7 +39,6 @@
             "src/Helpers/files.php",
             "src/Helpers/http.php",
             "src/Helpers/images.php",
-            "src/Helpers/notifications.php",
             "src/Helpers/strings.php",
             "src/Helpers/systems.php"
         ]
