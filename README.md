@@ -13,6 +13,12 @@ Functions that simplify the development process.
 </p>
 
 
+## Attention
+
+
+This package is abandoned and no longer maintained. The author suggests using the [andrey-helldar/support](https://github.com/andrey-helldar/support) package instead.
+
+
 ## Installation
 
 To get the latest version of Helpers, simply require the project using [Composer](https://getcomposer.org/):
